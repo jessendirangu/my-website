@@ -7,102 +7,127 @@
 
 <style>
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
-    color: white;
-    text-align: center;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  color: white;
+  text-align: center;
 }
 
 /* NAV */
 nav {
-    display: flex;
-    justify-content: center;
-    gap: 25px;
-    padding: 15px;
-    background: rgba(0,0,0,0.7);
-    position: sticky;
-    top: 0;
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  padding: 15px;
+  background: rgba(0,0,0,0.7);
+  position: sticky;
+  top: 0;
 }
 
 nav a {
-    color: #00ffcc;
-    text-decoration: none;
-    font-weight: bold;
-    transition: 0.3s;
-}
-
-nav a:hover {
-    color: white;
+  color: #00ffcc;
+  text-decoration: none;
+  font-weight: bold;
 }
 
 /* HERO */
 .hero {
-    padding: 60px 20px;
-    animation: fadeIn 1.5s ease-in;
+  padding: 80px 20px;
 }
 
 .hero h1 {
-    font-size: 40px;
-    color: #00ffcc;
+  font-size: 42px;
+  color: #00ffcc;
 }
 
 .profile {
-    width: 150px;
-    border-radius: 50%;
-    border: 4px solid #00ffcc;
-    margin-top: 20px;
+  width: 150px;
+  border-radius: 50%;
+  border: 4px solid #00ffcc;
+  margin-top: 20px;
 }
 
-/* BUTTONS */
+/* BUTTON */
 button {
-    padding: 12px 25px;
-    border: none;
-    border-radius: 8px;
-    background: #00ffcc;
-    color: black;
-    font-weight: bold;
-    cursor: pointer;
-    margin: 10px;
-    transition: 0.3s;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 25px;
+  background: #00ffcc;
+  color: black;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 15px;
+  transition: 0.3s;
 }
 
 button:hover {
-    transform: scale(1.05);
-    background: white;
+  transform: scale(1.05);
+  background: white;
 }
 
 /* CARDS */
 .card {
-    background: rgba(255,255,255,0.1);
-    padding: 20px;
-    margin: 20px auto;
-    border-radius: 12px;
-    max-width: 300px;
-    transition: 0.3s;
+  background: rgba(255,255,255,0.08);
+  margin: 25px auto;
+  padding: 25px;
+  border-radius: 15px;
+  max-width: 350px;
+  transition: 0.4s;
 }
 
 .card:hover {
-    transform: translateY(-5px);
+  transform: translateY(-8px);
+}
+
+/* PROJECT IMAGE */
+.project-img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 15px;
 }
 
 /* SECTIONS */
 section {
-    padding: 40px 20px;
+  padding: 50px 20px;
+}
+
+/* FADE ANIMATION */
+.fade {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: 1s;
+}
+
+.fade.show {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /* CONTACT */
 .contact a {
-    display: block;
-    margin: 10px;
-    color: #00ffcc;
-    text-decoration: none;
+  display: block;
+  margin: 10px;
+  color: #00ffcc;
+  text-decoration: none;
 }
 
-@keyframes fadeIn {
-    from {opacity: 0;}
-    to {opacity: 1;}
+/* FLOATING WHATSAPP */
+.whatsapp-float {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #25D366;
+  color: white;
+  padding: 15px;
+  border-radius: 50%;
+  font-size: 20px;
+  text-decoration: none;
 }
 
 </style>
@@ -120,36 +145,38 @@ section {
 </nav>
 
 <!-- HERO -->
-<section class="hero">
+<section class="hero fade">
   <h1>Hello, I’m Jesse 👋</h1>
   <p>Web Developer | Building Modern Websites</p>
 
   <img src="me.jpg" class="profile">
 
   <br>
-
   <a href="#contact"><button>Hire Me</button></a>
 </section>
 
 <!-- ABOUT -->
-<section id="about">
+<section id="about" class="fade">
   <h2>About Me</h2>
+
   <div class="card">
     <p>
       I am a BSc Nursing student in the UK and a web developer.
-      I build modern, responsive websites and aim to create digital solutions
-      that can impact healthcare and everyday life.
+      I build modern, responsive websites and create digital solutions
+      that improve healthcare and everyday life.
     </p>
   </div>
 </section>
 
 <!-- PROJECTS -->
-<section id="projects">
+<section id="projects" class="fade">
   <h2>My Projects</h2>
 
   <div class="card">
+    <img src="https://images.unsplash.com/photo-1505751172876-fa1923c5c528" class="project-img">
+
     <h3>Health Awareness Website</h3>
-    <p>Health education site with BMI calculator, prevention and early detection tips.</p>
+    <p>Health education platform with BMI calculator, prevention and early detection tips.</p>
 
     <a href="health.html">
       <button>View Project</button>
@@ -159,7 +186,7 @@ section {
 </section>
 
 <!-- SKILLS -->
-<section id="skills">
+<section id="skills" class="fade">
   <h2>Skills</h2>
 
   <div class="card">HTML</div>
@@ -169,7 +196,7 @@ section {
 </section>
 
 <!-- CONTACT -->
-<section id="contact" class="contact">
+<section id="contact" class="contact fade">
   <h2>Contact Me</h2>
 
   <a href="mailto:Jessendirangu933@gmail.com">📧 Email Me</a>
@@ -177,6 +204,23 @@ section {
   <a href="https://wa.me/447777386639">💬 WhatsApp Me</a>
 
 </section>
+
+<!-- FLOATING WHATSAPP -->
+<a href="https://wa.me/447777386639" class="whatsapp-float">💬</a>
+
+<script>
+// Fade-in animation on scroll
+const faders = document.querySelectorAll('.fade');
+
+window.addEventListener('scroll', () => {
+  faders.forEach(el => {
+    const top = el.getBoundingClientRect().top;
+    if (top < window.innerHeight - 50) {
+      el.classList.add('show');
+    }
+  });
+});
+</script>
 
 </body>
 </html>
