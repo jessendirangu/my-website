@@ -3,68 +3,68 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Health Awareness - Jesse</title>
+<title>Health Awareness</title>
 
 <style>
 body {
   margin: 0;
   font-family: Arial;
-  background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
-  color: white;
-  text-align: center;
+  background: #f4f7fb;
+  color: #0f172a;
 }
 
+/* NAV */
 nav {
   display: flex;
-  justify-content: center;
-  gap: 20px;
+  justify-content: space-around;
+  background: #005eb8;
   padding: 15px;
-  background: rgba(0,0,0,0.6);
 }
 
 nav a {
-  color: #00ffcc;
+  color: white;
   text-decoration: none;
   font-weight: bold;
 }
 
+/* HEADER */
+header {
+  text-align: center;
+  padding: 30px;
+}
+
+/* SECTIONS */
 section {
-  padding: 40px 20px;
-}
-
-.card {
-  background: rgba(255,255,255,0.1);
-  margin: 20px auto;
   padding: 20px;
-  border-radius: 15px;
+}
+
+/* CARD */
+.card {
+  background: white;
+  padding: 20px;
+  margin: 15px auto;
+  border-radius: 10px;
   max-width: 700px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
 }
 
-h1, h2 {
-  color: #00ffcc;
-}
-
-img {
-  width: 100%;
-  max-width: 400px;
-  border-radius: 10px;
-  margin-top: 15px;
-}
-
-input {
-  padding: 10px;
-  margin: 5px;
-  border-radius: 10px;
-  border: none;
-}
-
+/* BUTTON */
 button {
   padding: 10px 20px;
   border: none;
-  background: #00ffcc;
-  color: black;
-  border-radius: 20px;
+  background: #005eb8;
+  color: white;
+  border-radius: 8px;
   cursor: pointer;
+}
+
+/* INPUT */
+input, textarea {
+  padding: 10px;
+  margin: 8px;
+  width: 90%;
+  border-radius: 8px;
+  border: 1px solid #ccc;
 }
 </style>
 </head>
@@ -74,113 +74,100 @@ button {
 <nav>
   <a href="index.html">Home</a>
   <a href="#tips">Tips</a>
+  <a href="#diseases">Diseases</a>
   <a href="#bmi">BMI</a>
-  <a href="#prevention">Prevention</a>
-  <a href="#contact">Help</a>
+  <a href="#appointment">Book</a>
 </nav>
 
-<section>
+<header>
   <h1>Health Awareness</h1>
-  <p>Promoting a healthy lifestyle for everyone.</p>
-</section>
+  <p>Promoting healthy living and disease prevention</p>
+</header>
 
-<!-- TIPS -->
+<!-- HEALTH TIPS -->
 <section id="tips">
-  <h2>Health Tips</h2>
   <div class="card">
-    <p>✔ Drink enough water daily</p>
-    <p>✔ Exercise regularly</p>
+    <h2>Healthy Living</h2>
     <p>✔ Eat balanced meals</p>
-    <p>✔ Get enough sleep</p>
-    <img src="https://images.unsplash.com/photo-1505751172876-fa1923c5c528">
+    <p>✔ Exercise regularly</p>
+    <p>✔ Stay hydrated</p>
+    <p>✔ Sleep 7–9 hours</p>
   </div>
-</section>
 
-<!-- CAUSES -->
-<section>
-  <h2>Common Causes</h2>
   <div class="card">
-    <p>• Poor diet</p>
-    <p>• Lack of exercise</p>
-    <p>• Smoking & alcohol</p>
-    <p>• Stress</p>
-    <img src="https://images.unsplash.com/photo-1498837167922-ddd27525d352">
+    <h2>Mental Health</h2>
+    <p>✔ Manage stress</p>
+    <p>✔ Talk to someone</p>
+    <p>✔ Take breaks</p>
   </div>
 </section>
 
-<!-- PREVENTION -->
-<section id="prevention">
-  <h2>Prevention</h2>
+<!-- DISEASES -->
+<section id="diseases">
   <div class="card">
-    <p>✔ Healthy eating</p>
-    <p>✔ Regular exercise</p>
-    <p>✔ Routine checkups</p>
-    <p>✔ Avoid harmful habits</p>
-    <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438">
+    <h2>Hypertension</h2>
+    <p><b>Causes:</b> Stress, high salt diet</p>
+    <p><b>Symptoms:</b> Headaches, dizziness</p>
+    <p><b>Prevention:</b> Exercise, reduce salt</p>
+  </div>
+
+  <div class="card">
+    <h2>Diabetes</h2>
+    <p><b>Causes:</b> High sugar intake</p>
+    <p><b>Symptoms:</b> Frequent urination, fatigue</p>
+    <p><b>Prevention:</b> Healthy diet, exercise</p>
+  </div>
+
+  <div class="card">
+    <h2>Early Warning Signs</h2>
+    <p>• Persistent fatigue</p>
+    <p>• Sudden weight changes</p>
+    <p>• Shortness of breath</p>
   </div>
 </section>
 
-<!-- BMI CALCULATOR -->
+<!-- BMI -->
 <section id="bmi">
-  <h2>BMI Calculator</h2>
-
   <div class="card">
-    <input type="number" id="weight" placeholder="Weight (kg)">
-    <input type="number" id="height" placeholder="Height (m)">
-    <br><br>
-    <button onclick="calculateBMI()">Calculate</button>
-
+    <h2>BMI Calculator</h2>
+    <input id="w" placeholder="Weight (kg)">
+    <input id="h" placeholder="Height (m)">
+    <br>
+    <button onclick="bmi()">Calculate</button>
     <p id="result"></p>
   </div>
 </section>
 
-<!-- WHAT TO DO -->
-<section>
-  <h2>If You Notice Symptoms</h2>
+<!-- APPOINTMENT -->
+<section id="appointment">
   <div class="card">
-    <p>• Don’t ignore symptoms</p>
-    <p>• Seek medical advice</p>
-    <p>• Follow treatment plans</p>
-    <p>• Avoid self-medication</p>
+    <h2>Book Consultation</h2>
+    <input placeholder="Your Name">
+    <input placeholder="Your Email">
+    <textarea placeholder="Describe your concern"></textarea>
+    <button onclick="alert('Request submitted!')">Submit</button>
   </div>
 </section>
 
 <!-- CONTACT -->
-<section id="contact">
-  <h2>Need Help?</h2>
-
-  <a href="tel:+447777386639">
-    <button>Call for Advice</button>
-  </a>
-
-  <br><br>
-
-  <a href="https://wa.me/447777386639">
-    <button>Chat on WhatsApp</button>
-  </a>
+<section>
+  <div class="card">
+    <h2>Need Help?</h2>
+    <a href="tel:+447777386639"><button>Call</button></a>
+    <br><br>
+    <a href="https://wa.me/447777386639"><button>WhatsApp</button></a>
+  </div>
 </section>
 
 <script>
-function calculateBMI() {
-  let weight = document.getElementById("weight").value;
-  let height = document.getElementById("height").value;
+function bmi() {
+  let w = document.getElementById("w").value;
+  let h = document.getElementById("h").value;
 
-  let bmi = weight / (height * height);
-
-  let result = "";
-
-  if (bmi < 18.5) {
-    result = "Underweight";
-  } else if (bmi < 25) {
-    result = "Normal weight";
-  } else if (bmi < 30) {
-    result = "Overweight";
-  } else {
-    result = "Obese";
-  }
+  let b = w / (h*h);
 
   document.getElementById("result").innerHTML =
-    "Your BMI is " + bmi.toFixed(2) + " (" + result + ")";
+    "Your BMI is " + b.toFixed(2);
 }
 </script>
 
