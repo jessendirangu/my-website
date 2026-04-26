@@ -63,11 +63,9 @@ button {
   font-weight: bold;
   cursor: pointer;
   margin-top: 15px;
-  transition: 0.3s;
 }
 
 button:hover {
-  transform: scale(1.05);
   background: white;
 }
 
@@ -78,35 +76,18 @@ button:hover {
   padding: 25px;
   border-radius: 15px;
   max-width: 350px;
-  transition: 0.4s;
 }
 
-.card:hover {
-  transform: translateY(-8px);
-}
-
-/* PROJECT IMAGE */
+/* IMAGE */
 .project-img {
   width: 100%;
   border-radius: 10px;
   margin-bottom: 15px;
 }
 
-/* SECTIONS */
+/* SECTION */
 section {
   padding: 50px 20px;
-}
-
-/* FADE ANIMATION */
-.fade {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: 1s;
-}
-
-.fade.show {
-  opacity: 1;
-  transform: translateY(0);
 }
 
 /* CONTACT */
@@ -117,7 +98,7 @@ section {
   text-decoration: none;
 }
 
-/* FLOATING WHATSAPP */
+/* FLOAT WHATSAPP */
 .whatsapp-float {
   position: fixed;
   bottom: 20px;
@@ -126,7 +107,6 @@ section {
   color: white;
   padding: 15px;
   border-radius: 50%;
-  font-size: 20px;
   text-decoration: none;
 }
 
@@ -140,12 +120,12 @@ section {
   <a href="#">Home</a>
   <a href="#about">About</a>
   <a href="#projects">Projects</a>
-  <a href="#skills">Skills</a>
+  <a href="health.html">Health</a>
   <a href="#contact">Contact</a>
 </nav>
 
 <!-- HERO -->
-<section class="hero fade">
+<section class="hero">
   <h1>Hello, I’m Jesse 👋</h1>
   <p>Web Developer | Building Modern Websites</p>
 
@@ -156,37 +136,42 @@ section {
 </section>
 
 <!-- ABOUT -->
-<section id="about" class="fade">
+<section id="about">
   <h2>About Me</h2>
 
   <div class="card">
     <p>
-      I am a BSc Nursing student in the UK and a web developer.
-      I build modern, responsive websites and create digital solutions
-      that improve healthcare and everyday life.
+      I am a BSc Nursing student and web developer combining healthcare knowledge
+      with technology to build modern health-focused digital solutions.
     </p>
   </div>
 </section>
 
 <!-- PROJECTS -->
-<section id="projects" class="fade">
+<section id="projects">
   <h2>My Projects</h2>
 
   <div class="card">
+
     <img src="https://images.unsplash.com/photo-1505751172876-fa1923c5c528" class="project-img">
 
     <h3>Health Awareness Website</h3>
-    <p>Health education platform with BMI calculator, prevention and early detection tips.</p>
+
+    <p>
+      A health education platform providing information on diseases, prevention,
+      early detection, and a BMI calculator with consultation form.
+    </p>
 
     <a href="health.html">
       <button>View Project</button>
     </a>
+
   </div>
 
 </section>
 
 <!-- SKILLS -->
-<section id="skills" class="fade">
+<section id="skills">
   <h2>Skills</h2>
 
   <div class="card">HTML</div>
@@ -196,7 +181,7 @@ section {
 </section>
 
 <!-- CONTACT -->
-<section id="contact" class="contact fade">
+<section id="contact" class="contact">
   <h2>Contact Me</h2>
 
   <a href="mailto:Jessendirangu933@gmail.com">📧 Email Me</a>
@@ -207,20 +192,6 @@ section {
 
 <!-- FLOATING WHATSAPP -->
 <a href="https://wa.me/447777386639" class="whatsapp-float">💬</a>
-
-<script>
-// Fade-in animation on scroll
-const faders = document.querySelectorAll('.fade');
-
-window.addEventListener('scroll', () => {
-  faders.forEach(el => {
-    const top = el.getBoundingClientRect().top;
-    if (top < window.innerHeight - 50) {
-      el.classList.add('show');
-    }
-  });
-});
-</script>
 
 </body>
 </html>
