@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Jesse | Web Developer</title>
+<title>Health Awareness - Jesse</title>
 
 <style>
 body {
@@ -11,17 +11,15 @@ body {
   font-family: Arial, sans-serif;
   background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
   color: white;
-  text-align: center;
 }
 
+/* NAVBAR */
 nav {
   display: flex;
   justify-content: center;
-  gap: 20px;
+  gap: 30px;
   padding: 15px;
-  background: rgba(0,0,0,0.6);
-  position: sticky;
-  top: 0;
+  background: rgba(0,0,0,0.7);
 }
 
 nav a {
@@ -30,12 +28,18 @@ nav a {
   font-weight: bold;
 }
 
-section {
-  padding: 50px 20px;
+nav a:hover {
+  color: white;
 }
 
+/* HEADINGS */
 h1, h2 {
-  color: #00ffcc;
+  text-align: center;
+}
+
+/* SECTIONS */
+section {
+  padding: 40px 20px;
 }
 
 .card {
@@ -43,23 +47,43 @@ h1, h2 {
   padding: 20px;
   margin: 20px auto;
   border-radius: 10px;
-  width: 80%;
+  max-width: 700px;
+}
+
+/* FORM */
+form {
+  max-width: 500px;
+  margin: auto;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border-radius: 8px;
+  border: none;
 }
 
 button {
   background: #00ffcc;
+  color: black;
   border: none;
-  padding: 12px 20px;
-  border-radius: 5px;
-  cursor: pointer;
+  padding: 12px;
+  width: 100%;
+  border-radius: 8px;
   font-weight: bold;
+  cursor: pointer;
 }
 
-input, textarea {
-  width: 80%;
-  padding: 10px;
-  border-radius: 5px;
-  border: none;
+button:hover {
+  background: #00ccaa;
+}
+
+/* STATUS */
+#status {
+  text-align: center;
+  margin-top: 10px;
+  font-weight: bold;
 }
 </style>
 </head>
@@ -73,89 +97,81 @@ input, textarea {
 </nav>
 
 <section>
-  <h1>Hello, I'm Jesse 👋</h1>
-  <p>Web Developer | Building Modern Websites</p>
+  <h1>Health Awareness</h1>
+  <p style="text-align:center;">Promoting a healthy lifestyle for everyone.</p>
 </section>
 
 <section id="health">
-  <h2>Health Awareness</h2>
-
+  <h2>Health Tips</h2>
   <div class="card">
-    <h3>Health Tips</h3>
     <p>✔ Drink enough water daily</p>
     <p>✔ Exercise regularly</p>
     <p>✔ Eat balanced meals</p>
     <p>✔ Get enough sleep</p>
-    <p>✔ Manage stress properly</p>
-    <p>✔ Avoid smoking and excess alcohol</p>
+    <p>✔ Reduce stress</p>
+    <p>✔ Avoid smoking & alcohol abuse</p>
   </div>
 
+  <h2>Prevention</h2>
   <div class="card">
-    <h3>Common Conditions</h3>
-    <p>Hypertension (High blood pressure)</p>
-    <p>Diabetes</p>
-    <p>Obesity</p>
+    <p>✔ Regular medical checkups</p>
+    <p>✔ Maintain hygiene</p>
+    <p>✔ Vaccination</p>
+    <p>✔ Healthy diet</p>
   </div>
 
+  <h2>Early Detection</h2>
   <div class="card">
-    <h3>Causes</h3>
-    <p>Poor diet, lack of exercise, stress, genetics</p>
+    <p>✔ Monitor unusual symptoms</p>
+    <p>✔ Regular screening tests</p>
+    <p>✔ Seek medical advice early</p>
   </div>
 
+  <h2>What To Do If You Have Symptoms</h2>
   <div class="card">
-    <h3>Prevention</h3>
-    <p>Healthy eating, regular checkups, active lifestyle</p>
-  </div>
-
-  <div class="card">
-    <h3>Early Detection</h3>
-    <p>Routine screenings, blood pressure checks, blood sugar tests</p>
-  </div>
-
-  <div class="card">
-    <h3>What To Do If You Have Symptoms</h3>
-    <p>Seek medical advice immediately, avoid self-medication</p>
+    <p>✔ Seek medical advice immediately</p>
+    <p>✔ Avoid self-medication</p>
+    <p>✔ Follow professional guidance</p>
   </div>
 </section>
 
 <section id="contact">
   <h2>Book Appointment</h2>
 
-  <form id="contact-form">
-    <input type="text" name="name" placeholder="Your Name" required><br><br>
-    <input type="email" name="email" placeholder="Your Email" required><br><br>
-    <input type="text" name="phone" placeholder="Your Phone" required><br><br>
-    <textarea name="message" placeholder="Describe your issue..." required></textarea><br><br>
+  <form id="appointment-form">
+    <input type="text" name="name" placeholder="Your Name" required>
+    <input type="email" name="email" placeholder="Your Email" required>
+    <input type="text" name="phone" placeholder="Phone Number" required>
+    <textarea name="message" placeholder="Describe your issue" required></textarea>
+
     <button type="submit">Book Appointment</button>
   </form>
 
   <p id="status"></p>
 
-  <br>
-  <p>📞 Call: <a href="tel:+447777386639" style="color:#00ffcc;">+447777386639</a></p>
-  <p>💬 WhatsApp: <a href="https://wa.me/447777386639" style="color:#00ffcc;">Chat on WhatsApp</a></p>
-  <p>📧 Email: jessendirangu933@gmail.com</p>
+  <p style="text-align:center;">📞 Call: +447777386639</p>
+  <p style="text-align:center;">📧 Email: jessendirangu933@gmail.com</p>
 </section>
 
-<!-- EmailJS -->
+<!-- EMAILJS -->
 <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
 
 <script>
 (function(){
-  emailjs.init("RQ_HOXiPeuCO-tJsw");
+  emailjs.init("RQ_H0XiPeuCO-tJsw");
 })();
 
-document.getElementById("contact-form").addEventListener("submit", function(e){
+document.getElementById("appointment-form").addEventListener("submit", function(e) {
   e.preventDefault();
 
   emailjs.sendForm(
     "service_4vigyui",
-    "YOUR_TEMPLATE_ID",
+    "template_fs4bxon",
     this
   )
-  .then(function(){
+  .then(function() {
     document.getElementById("status").innerHTML = "✅ Appointment booked successfully!";
-  }, function(error){
+  }, function(error) {
     document.getElementById("status").innerHTML = "❌ Failed to send. Try again.";
     console.log(error);
   });
