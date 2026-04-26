@@ -3,23 +3,22 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Health Awareness - Jesse</title>
+<title>Jesse Ndirangu | Web Developer</title>
 
 <style>
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
   color: white;
 }
 
-/* NAVBAR */
 nav {
   display: flex;
   justify-content: center;
-  gap: 30px;
+  gap: 25px;
   padding: 15px;
-  background: rgba(0,0,0,0.7);
+  background: rgba(0,0,0,0.8);
 }
 
 nav a {
@@ -28,48 +27,35 @@ nav a {
   font-weight: bold;
 }
 
-nav a:hover {
-  color: white;
-}
-
-/* HEADINGS */
-h1, h2 {
+section {
+  padding: 40px 20px;
   text-align: center;
 }
 
-/* SECTIONS */
-section {
-  padding: 40px 20px;
+h1, h2 {
+  color: #00ffcc;
 }
 
 .card {
   background: rgba(255,255,255,0.1);
   padding: 20px;
-  margin: 20px auto;
-  border-radius: 10px;
+  margin: 15px auto;
+  border-radius: 12px;
   max-width: 700px;
 }
 
-/* FORM */
-form {
-  max-width: 500px;
-  margin: auto;
-}
-
 input, textarea {
-  width: 100%;
+  width: 90%;
   padding: 12px;
-  margin: 10px 0;
+  margin: 10px;
   border-radius: 8px;
   border: none;
 }
 
 button {
   background: #00ffcc;
-  color: black;
-  border: none;
   padding: 12px;
-  width: 100%;
+  border: none;
   border-radius: 8px;
   font-weight: bold;
   cursor: pointer;
@@ -79,11 +65,16 @@ button:hover {
   background: #00ccaa;
 }
 
-/* STATUS */
-#status {
-  text-align: center;
-  margin-top: 10px;
-  font-weight: bold;
+#popup {
+  display: none;
+  position: fixed;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  color: black;
+  padding: 20px;
+  border-radius: 10px;
 }
 </style>
 </head>
@@ -92,46 +83,65 @@ button:hover {
 
 <nav>
   <a href="#">Home</a>
+  <a href="#about">About</a>
   <a href="#health">Health</a>
   <a href="#contact">Contact</a>
 </nav>
 
 <section>
-  <h1>Health Awareness</h1>
-  <p style="text-align:center;">Promoting a healthy lifestyle for everyone.</p>
+  <h1>Hello, I’m Jesse 👋</h1>
+  <p>Web Developer | Building Modern Websites</p>
+</section>
+
+<section id="about">
+  <h2>About Me</h2>
+  <div class="card">
+    <p>
+      My name is Jesse Ndirangu. I am a BSc Nursing student in the UK and a web developer.
+      I combine healthcare knowledge with technology to build modern digital solutions.
+    </p>
+
+    <p>
+      I have experience in patient care, teamwork, and communication,
+      and I am developing skills in HTML, CSS, and JavaScript.
+    </p>
+
+    <p>
+      My goal is to create innovative healthcare platforms that improve access
+      to services and information.
+    </p>
+  </div>
 </section>
 
 <section id="health">
-  <h2>Health Tips</h2>
+  <h2>Health Education</h2>
+
   <div class="card">
-    <p>✔ Drink enough water daily</p>
+    <h3>Health Tips</h3>
+    <p>✔ Drink enough water</p>
     <p>✔ Exercise regularly</p>
     <p>✔ Eat balanced meals</p>
     <p>✔ Get enough sleep</p>
-    <p>✔ Reduce stress</p>
-    <p>✔ Avoid smoking & alcohol abuse</p>
   </div>
 
-  <h2>Prevention</h2>
   <div class="card">
-    <p>✔ Regular medical checkups</p>
-    <p>✔ Maintain hygiene</p>
-    <p>✔ Vaccination</p>
-    <p>✔ Healthy diet</p>
+    <h3>Causes</h3>
+    <p>Poor diet, lack of exercise, stress, genetics</p>
   </div>
 
-  <h2>Early Detection</h2>
   <div class="card">
-    <p>✔ Monitor unusual symptoms</p>
-    <p>✔ Regular screening tests</p>
-    <p>✔ Seek medical advice early</p>
+    <h3>Prevention</h3>
+    <p>Healthy diet, regular checkups, active lifestyle</p>
   </div>
 
-  <h2>What To Do If You Have Symptoms</h2>
   <div class="card">
-    <p>✔ Seek medical advice immediately</p>
-    <p>✔ Avoid self-medication</p>
-    <p>✔ Follow professional guidance</p>
+    <h3>Early Detection</h3>
+    <p>Routine screenings and noticing symptoms early</p>
+  </div>
+
+  <div class="card">
+    <h3>What To Do</h3>
+    <p>Seek medical help immediately and avoid self-medication</p>
   </div>
 </section>
 
@@ -149,11 +159,15 @@ button:hover {
 
   <p id="status"></p>
 
-  <p style="text-align:center;">📞 Call: +447777386639</p>
-  <p style="text-align:center;">📧 Email: jessendirangu933@gmail.com</p>
+  <p>📞 +447777386639</p>
+  <p>📧 jessendirangu933@gmail.com</p>
 </section>
 
-<!-- EMAILJS -->
+<div id="popup">
+  <h3>✅ Appointment Sent!</h3>
+  <p>We will contact you shortly.</p>
+</div>
+
 <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
 
 <script>
@@ -164,16 +178,13 @@ button:hover {
 document.getElementById("appointment-form").addEventListener("submit", function(e) {
   e.preventDefault();
 
-  emailjs.sendForm(
-    "service_4vigyui",
-    "template_fs4bxon",
-    this
-  )
-  .then(function() {
-    document.getElementById("status").innerHTML = "✅ Appointment booked successfully!";
-  }, function(error) {
+  emailjs.sendForm("service_4vigyui", "template_fs4bxon", this)
+  .then(() => {
+    document.getElementById("popup").style.display = "block";
+    this.reset();
+  })
+  .catch(() => {
     document.getElementById("status").innerHTML = "❌ Failed to send. Try again.";
-    console.log(error);
   });
 });
 </script>
