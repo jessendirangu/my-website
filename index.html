@@ -3,29 +3,23 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Jesse Ndirangu Portfolio</title>
+<title>Jesse | Web Developer</title>
 
 <style>
-
-html {
-  scroll-behavior: smooth;
-}
-
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
   color: white;
   text-align: center;
 }
 
-/* NAV */
 nav {
   display: flex;
   justify-content: center;
-  gap: 25px;
+  gap: 20px;
   padding: 15px;
-  background: rgba(0,0,0,0.7);
+  background: rgba(0,0,0,0.6);
   position: sticky;
   top: 0;
 }
@@ -36,162 +30,137 @@ nav a {
   font-weight: bold;
 }
 
-/* HERO */
-.hero {
-  padding: 80px 20px;
-}
-
-.hero h1 {
-  font-size: 42px;
-  color: #00ffcc;
-}
-
-.profile {
-  width: 150px;
-  border-radius: 50%;
-  border: 4px solid #00ffcc;
-  margin-top: 20px;
-}
-
-/* BUTTON */
-button {
-  padding: 12px 25px;
-  border: none;
-  border-radius: 25px;
-  background: #00ffcc;
-  color: black;
-  font-weight: bold;
-  cursor: pointer;
-  margin-top: 15px;
-}
-
-button:hover {
-  background: white;
-}
-
-/* CARDS */
-.card {
-  background: rgba(255,255,255,0.08);
-  margin: 25px auto;
-  padding: 25px;
-  border-radius: 15px;
-  max-width: 350px;
-}
-
-/* IMAGE */
-.project-img {
-  width: 100%;
-  border-radius: 10px;
-  margin-bottom: 15px;
-}
-
-/* SECTION */
 section {
   padding: 50px 20px;
 }
 
-/* CONTACT */
-.contact a {
-  display: block;
-  margin: 10px;
+h1, h2 {
   color: #00ffcc;
-  text-decoration: none;
 }
 
-/* FLOAT WHATSAPP */
-.whatsapp-float {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background: #25D366;
-  color: white;
-  padding: 15px;
-  border-radius: 50%;
-  text-decoration: none;
+.card {
+  background: rgba(255,255,255,0.1);
+  padding: 20px;
+  margin: 20px auto;
+  border-radius: 10px;
+  width: 80%;
 }
 
+button {
+  background: #00ffcc;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+input, textarea {
+  width: 80%;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+}
 </style>
 </head>
 
 <body>
 
-<!-- NAV -->
 <nav>
   <a href="#">Home</a>
-  <a href="#about">About</a>
-  <a href="#projects">Projects</a>
-  <a href="health.html">Health</a>
+  <a href="#health">Health</a>
   <a href="#contact">Contact</a>
 </nav>
 
-<!-- HERO -->
-<section class="hero">
-  <h1>Hello, I’m Jesse 👋</h1>
+<section>
+  <h1>Hello, I'm Jesse 👋</h1>
   <p>Web Developer | Building Modern Websites</p>
+</section>
 
-  <img src="me.jpg" class="profile">
+<section id="health">
+  <h2>Health Awareness</h2>
+
+  <div class="card">
+    <h3>Health Tips</h3>
+    <p>✔ Drink enough water daily</p>
+    <p>✔ Exercise regularly</p>
+    <p>✔ Eat balanced meals</p>
+    <p>✔ Get enough sleep</p>
+    <p>✔ Manage stress properly</p>
+    <p>✔ Avoid smoking and excess alcohol</p>
+  </div>
+
+  <div class="card">
+    <h3>Common Conditions</h3>
+    <p>Hypertension (High blood pressure)</p>
+    <p>Diabetes</p>
+    <p>Obesity</p>
+  </div>
+
+  <div class="card">
+    <h3>Causes</h3>
+    <p>Poor diet, lack of exercise, stress, genetics</p>
+  </div>
+
+  <div class="card">
+    <h3>Prevention</h3>
+    <p>Healthy eating, regular checkups, active lifestyle</p>
+  </div>
+
+  <div class="card">
+    <h3>Early Detection</h3>
+    <p>Routine screenings, blood pressure checks, blood sugar tests</p>
+  </div>
+
+  <div class="card">
+    <h3>What To Do If You Have Symptoms</h3>
+    <p>Seek medical advice immediately, avoid self-medication</p>
+  </div>
+</section>
+
+<section id="contact">
+  <h2>Book Appointment</h2>
+
+  <form id="contact-form">
+    <input type="text" name="name" placeholder="Your Name" required><br><br>
+    <input type="email" name="email" placeholder="Your Email" required><br><br>
+    <input type="text" name="phone" placeholder="Your Phone" required><br><br>
+    <textarea name="message" placeholder="Describe your issue..." required></textarea><br><br>
+    <button type="submit">Book Appointment</button>
+  </form>
+
+  <p id="status"></p>
 
   <br>
-  <a href="#contact"><button>Hire Me</button></a>
+  <p>📞 Call: <a href="tel:+447777386639" style="color:#00ffcc;">+447777386639</a></p>
+  <p>💬 WhatsApp: <a href="https://wa.me/447777386639" style="color:#00ffcc;">Chat on WhatsApp</a></p>
+  <p>📧 Email: jessendirangu933@gmail.com</p>
 </section>
 
-<!-- ABOUT -->
-<section id="about">
-  <h2>About Me</h2>
+<!-- EmailJS -->
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
 
-  <div class="card">
-    <p>
-      I am a BSc Nursing student and web developer combining healthcare knowledge
-      with technology to build modern health-focused digital solutions.
-    </p>
-  </div>
-</section>
+<script>
+(function(){
+  emailjs.init("YOUR_PUBLIC_KEY"); // replace this
+})();
 
-<!-- PROJECTS -->
-<section id="projects">
-  <h2>My Projects</h2>
+document.getElementById("contact-form").addEventListener("submit", function(e){
+  e.preventDefault();
 
-  <div class="card">
-
-    <img src="https://images.unsplash.com/photo-1505751172876-fa1923c5c528" class="project-img">
-
-    <h3>Health Awareness Website</h3>
-
-    <p>
-      A health education platform providing information on diseases, prevention,
-      early detection, and a BMI calculator with consultation form.
-    </p>
-
-    <a href="health.html">
-      <button>View Project</button>
-    </a>
-
-  </div>
-
-</section>
-
-<!-- SKILLS -->
-<section id="skills">
-  <h2>Skills</h2>
-
-  <div class="card">HTML</div>
-  <div class="card">CSS</div>
-  <div class="card">JavaScript (Learning)</div>
-
-</section>
-
-<!-- CONTACT -->
-<section id="contact" class="contact">
-  <h2>Contact Me</h2>
-
-  <a href="mailto:Jessendirangu933@gmail.com">📧 Email Me</a>
-  <a href="tel:+447777386639">📞 Call Me</a>
-  <a href="https://wa.me/447777386639">💬 WhatsApp Me</a>
-
-</section>
-
-<!-- FLOATING WHATSAPP -->
-<a href="https://wa.me/447777386639" class="whatsapp-float">💬</a>
+  emailjs.sendForm(
+    "service_4vigyui",
+    "YOUR_TEMPLATE_ID",
+    this
+  )
+  .then(function(){
+    document.getElementById("status").innerHTML = "✅ Appointment booked successfully!";
+  }, function(error){
+    document.getElementById("status").innerHTML = "❌ Failed to send. Try again.";
+    console.log(error);
+  });
+});
+</script>
 
 </body>
 </html>
