@@ -1,16 +1,17 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Jesse Ndirangu Portfolio</title>
-
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jesse Ndirangu Portfolio</title>
 
   <style>
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background: #0f172a;
+      background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
       color: white;
+      text-align: center;
     }
 
     nav {
@@ -18,141 +19,130 @@
       justify-content: center;
       gap: 20px;
       padding: 15px;
-      background: #020617;
+      background: #0a1a24;
       position: sticky;
       top: 0;
     }
 
     nav a {
-      color: #38bdf8;
+      color: #00d4ff;
       text-decoration: none;
       font-weight: bold;
     }
 
-    header {
-      text-align: center;
-      padding: 80px 20px;
+    section {
+      padding: 60px 20px;
     }
 
     h1 {
-      color: #38bdf8;
-      font-size: 40px;
+      font-size: 2.5rem;
+      color: #00d4ff;
     }
 
-    section {
-      padding: 50px 20px;
-      text-align: center;
+    h2 {
+      margin-bottom: 20px;
     }
 
-    .container {
+    p {
       max-width: 600px;
       margin: auto;
     }
 
-    .box {
-      background: #1e293b;
-      padding: 20px;
-      border-radius: 10px;
-      margin-top: 15px;
-    }
-
-    button {
-      padding: 12px 20px;
-      background: #38bdf8;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-    }
-
     img {
-      width: 120px;
+      width: 180px;
+      height: 180px;
       border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid #00d4ff;
       margin-top: 20px;
     }
 
-    @media (max-width: 600px) {
-      h1 {
-        font-size: 28px;
-      }
+    .box {
+      background: rgba(255,255,255,0.1);
+      padding: 20px;
+      border-radius: 10px;
+      margin: 20px auto;
+      max-width: 400px;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 12px 25px;
+      background: #00d4ff;
+      color: black;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
     }
   </style>
-
 </head>
+
 <body>
 
-  <!-- NAVBAR -->
-  <nav><a href="#projects">Projects</a>
-    <a href="#home">Home</a>
-    <a href="#about">About</a>
-    <a href="#skills">Skills</a>
-    <a href="#contact">Contact</a>
-  </nav>
+<!-- NAV -->
+<nav>
+  <a href="#home">Home</a>
+  <a href="#about">About</a>
+  <a href="#projects">Projects</a>
+  <a href="#skills">Skills</a>
+  <a href="#contact">Contact</a>
+</nav>
 
-  <!-- HOME -->
-  <header id="home">
-    <h1>Hello, I’m Jesse 👋</h1>
-    <p>BSc Nursing Student & Future Web Developer</p>
-    <img src="me.jpg" alt="Jesse">
-  </header>
+<!-- HOME -->
+<section id="home">
+  <h1>Hello, I’m Jesse 👋</h1>
+  <p>Frontend Web Developer in Training | Building Modern Websites</p>
 
-  <!-- ABOUT -->
-  <section id="about">
-    <div class="container">
-      <h2>About Me</h2>
-      <div class="box">
-        <p>
-          I am a nursing student in the UK learning web development.
-          I want to build skills that allow me to earn online and create modern websites.
-        </p>
-      </div>
-    </div>
-  </section>
+  <img src="me.jpg" alt="Jesse">
 
-  <!-- SKILLS -->
-  <section id="projects">
-  <div class="container">
-    <h2>Projects</h2>
+  <br>
+  <a href="#contact" class="btn">Hire Me</a>
+</section>
 
-    <div class="box">
-      <h3>My Portfolio Website</h3>
-      <p>I built this website using HTML, CSS and JavaScript.</p>
-    </div>
-
-    <div class="box">
-      <h3>Future Projects</h3>
-      <p>I am currently learning and will add more projects soon.</p>
-    </div>
-
+<!-- ABOUT -->
+<section id="about">
+  <h2>About Me</h2>
+  <div class="box">
+    <p>
+      I am a BSc Nursing student in the UK currently learning web development.
+      I aim to build skills that allow me to work online and create modern, responsive websites.
+    </p>
   </div>
 </section>
-    <div class="container">
-      <h2>Skills</h2>
-      <div class="box">HTML</div>
-      <div class="box">CSS</div>
-      <div class="box">JavaScript (learning)</div>
-    </div>
-  </section>
 
-  <!-- CONTACT -->
-  <section id="contact">
-    <div class="container">
-      <h2>Contact</h2>
-      <div class="box">
-        <p>Email: 
-          <a href="mailto:Jessendirangu933@gmail.com">
-            Jessendirangu933@gmail.com
-          </a>
-        </p>
-        <button onclick="contact()">Contact Me</button>
-      </div>
-    </div>
-  </section>
+<!-- PROJECTS -->
+<section id="projects">
+  <h2>Projects</h2>
 
-  <script>
-    function contact() {
-      alert("Thanks for reaching out!");
-    }
-  </script>
+  <div class="box">
+    <h3>Personal Portfolio Website</h3>
+    <p>Designed and built a responsive portfolio using HTML and CSS.</p>
+  </div>
+
+  <div class="box">
+    <h3>More Projects Coming</h3>
+    <p>I am currently learning and will be adding more real-world projects soon.</p>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <h2>Skills</h2>
+
+  <div class="box">HTML</div>
+  <div class="box">CSS</div>
+  <div class="box">JavaScript (Learning)</div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <h2>Contact Me</h2>
+
+  <div class="box">
+    <p>Email: Jessendirangu933@gmail.com</p>
+  </div>
+</section>
 
 </body>
 </html>
