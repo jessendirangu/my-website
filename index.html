@@ -1,9 +1,10 @@
-<!DOCTYPE html>
+[16:03, 29/04/2026] J⚡️: https://jessendirangu.github.io
+[16:19, 29/04/2026] J⚡️: <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Jesse Ndirangu | Web Developer</title>
+<title>Jesse Ndirangu | Portfolio</title>
 
 <style>
 body {
@@ -11,14 +12,15 @@ body {
   font-family: Arial, sans-serif;
   background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
   color: white;
-  text-align: center;
+  scroll-behavior: smooth;
 }
 
 nav {
   position: sticky;
   top: 0;
-  background: rgba(0,0,0,0.6);
+  background: rgba(0,0,0,0.7);
   padding: 15px;
+  text-align: center;
 }
 
 nav a {
@@ -28,28 +30,59 @@ nav a {
   font-weight: bold;
 }
 
-.container {
-  padding: 40px 20px;
+section {
+  padding: 60px 20px;
+  text-align: center;
 }
 
-img {
-  width: 150px;
+/* ANIMATIONS */
+.fade {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 1s ease;
+}
+
+.fade.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* HERO */
+.hero img {
+  width: 140px;
   border-radius: 50%;
-  margin-bottom: 20px;
 }
 
 h1 {
   color: #00ffcc;
 }
 
+/* CARDS */
 .card {
   background: rgba(255,255,255,0.1);
-  padding: 20px;
+  padding: 25px;
   margin: 20px auto;
-  border-radius: 10px;
-  max-width: 600px;
+  border-radius: 12px;
+  max-width: 900px;
+  text-align: left;
 }
 
+/* PROJECTS */
+.projects {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.project-card {
+  background: rgba(255,255,255,0.1);
+  padding: 20px;
+  border-radius: 10px;
+}
+
+/* FORM */
 input, textarea {
   width: 90%;
   padding: 12px;
@@ -79,25 +112,114 @@ button {
 
 <nav>
   <a href="#home">Home</a>
+  <a href="#projects">Projects</a>
   <a href="#health">Health</a>
   <a href="#contact">Contact</a>
 </nav>
 
-<div class="container" id="home">
-  <img src="me.jpg" alt="Profile">
+<!-- HERO -->
+<section id="home" class="hero fade">
+  <img src="me.jpg">
   <h1>Jesse Ndirangu</h1>
   <p>Web Developer | Nursing Student</p>
-</div>
+</section>
 
-<div class="card" id="health">
-  <h2>Health Awareness</h2>
-  <p><b>Causes:</b> Poor diet, lack of exercise, stress, genetics</p>
-  <p><b>Prevention:</b> Healthy lifestyle, regular checkups, hygiene</p>
-  <p><b>Early Detection:</b> Screening, awareness, noticing symptoms early</p>
-  <p><b>What To Do:</b> Seek medical help immediately and avoid self-medication</p>
-</div>
+<!-- PROJECTS -->
+<section id="projects" class="fade">
+  <h2>My Projects</h2>
 
-<div class="card" id="contact">
+  <div class="projects">
+
+    <div class="project-card">
+      <h3>Health Awareness Website</h3>
+      <p>A responsive platform educating users on diseases, prevention and early detection.</p>
+      <p><b>Tech:</b> HTML, CSS, JavaScript</p>
+    </div>
+
+    <div class="project-card">
+      <h3>Appointment Booking System</h3>
+      <p>Users can book appointments and receive email notifications instantly.</p>
+      <p><b>Tech:</b> EmailJS API</p>
+    </div>
+
+    <div class="project-card">
+      <h3>Portfolio Website</h3>
+      <p>A professional personal site showcasing skills and projects.</p>
+      <p><b>Tech:</b> HTML, CSS</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- HEALTH / CANCER -->
+<section id="health" class="fade">
+  <h2>Cancer Awareness & Health Education</h2>
+
+  <div class="card">
+    <h3>What is Cancer?</h3>
+    <p>
+      Cancer is a disease where abnormal cells grow uncontrollably and can spread to other parts of the body.
+    </p>
+
+    <h3>Common Causes & Risk Factors</h3>
+    <ul>
+      <li>Smoking and tobacco use</li>
+      <li>Poor diet and lack of physical activity</li>
+      <li>Alcohol consumption</li>
+      <li>Genetic factors (family history)</li>
+      <li>Exposure to harmful chemicals or radiation</li>
+    </ul>
+
+    <h3>Common Types of Cancer</h3>
+    <ul>
+      <li>Breast cancer</li>
+      <li>Lung cancer</li>
+      <li>Prostate cancer</li>
+      <li>Cervical cancer</li>
+      <li>Colorectal cancer</li>
+    </ul>
+
+    <h3>Signs and Symptoms</h3>
+    <ul>
+      <li>Unexplained weight loss</li>
+      <li>Persistent fatigue</li>
+      <li>Lumps or swelling</li>
+      <li>Chronic pain</li>
+      <li>Changes in skin or unusual bleeding</li>
+    </ul>
+
+    <h3>Prevention</h3>
+    <ul>
+      <li>Maintain a healthy diet</li>
+      <li>Exercise regularly</li>
+      <li>Avoid smoking and limit alcohol</li>
+      <li>Regular medical checkups</li>
+      <li>Vaccination (e.g. HPV for cervical cancer)</li>
+    </ul>
+
+    <h3>Early Detection</h3>
+    <p>
+      Screening tests such as mammograms, Pap smears, and colon screening help detect cancer early when treatment is more effective.
+    </p>
+
+    <h3>Treatment Options</h3>
+    <ul>
+      <li>Surgery – removing the tumour</li>
+      <li>Chemotherapy – using drugs to kill cancer cells</li>
+      <li>Radiotherapy – using radiation</li>
+      <li>Immunotherapy – boosting the immune system</li>
+      <li>Targeted therapy – attacking specific cancer cells</li>
+    </ul>
+
+    <h3>What To Do</h3>
+    <p>
+      If you notice unusual symptoms, seek medical advice immediately. Early diagnosis saves lives.
+    </p>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="fade">
   <h2>Book Appointment</h2>
 
   <form id="appointment-form">
@@ -111,30 +233,46 @@ button {
 
   <div id="status"></div>
 
-  <p>📞 Call: +447777386639</p>
-  <p>📧 Email: jessendirangu933@gmail.com</p>
-</div>
+  <p>📞 +447777386639</p>
+  <p>📧 jessendirangu933@gmail.com</p>
+</section>
 
 <!-- EMAILJS -->
 <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
 
 <script>
 (function(){
-  emailjs.init("RQ_H0XiPeuC0-tJsw"); // ✅ CORRECT KEY (0 not O)
+  emailjs.init("RQ_H0XiPeuCO-tJsw");
 })();
 
+// FORM
 document.getElementById("appointment-form").addEventListener("submit", function(e) {
   e.preventDefault();
 
+  document.getElementById("status").innerHTML = "Sending...";
+
   emailjs.sendForm("service_4vigyui", "template_fs4bxon", this)
-    .then(function() {
+    .then(() => {
       document.getElementById("status").innerHTML =
         "<span style='color:lightgreen;'>✅ Appointment sent successfully!</span>";
-    }, function(error) {
+      this.reset();
+    }, (error) => {
       console.log(error);
       document.getElementById("status").innerHTML =
         "<span style='color:red;'>❌ Failed to send. Try again.</span>";
     });
+});
+
+// SCROLL ANIMATION
+const fades = document.querySelectorAll(".fade");
+
+window.addEventListener("scroll", () => {
+  fades.forEach(el => {
+    const top = el.getBoundingClientRect().top;
+    if (top < window.innerHeight - 100) {
+      el.classList.add("show");
+    }
+  });
 });
 </script>
 
