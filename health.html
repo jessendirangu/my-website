@@ -14,6 +14,7 @@ body {
   text-align: center;
 }
 
+/* NAV */
 nav {
   background: rgba(0,0,0,0.8);
   padding: 15px;
@@ -26,20 +27,38 @@ nav a {
   font-weight: bold;
 }
 
+/* CARDS */
 .card {
   background: rgba(255,255,255,0.1);
   margin: 20px auto;
   padding: 20px;
   border-radius: 12px;
-  max-width: 800px;
+  max-width: 900px;
 }
 
-img {
+/* IMAGE GRID */
+.image-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
+  gap: 15px;
+  margin-top: 15px;
+}
+
+.image-grid div {
+  text-align: center;
+}
+
+.image-grid img {
   width: 100%;
-  border-radius: 10px;
-  margin-top: 10px;
+  border-radius: 12px;
+  transition: transform 0.3s ease;
 }
 
+.image-grid img:hover {
+  transform: scale(1.05);
+}
+
+/* FORM */
 input, select, textarea {
   width: 90%;
   padding: 10px;
@@ -61,6 +80,7 @@ button {
 
 <body>
 
+<!-- NAV -->
 <nav>
   <a href="index.html">Home</a>
   <a href="index.html#projects">Projects</a>
@@ -73,7 +93,25 @@ button {
 <div class="card">
   <h2>🧬 Cancer Awareness</h2>
 
-  <img src="https://images.unsplash.com/photo-1580281657521-5c1f3c6b8c2c" alt="Cancer awareness">
+  <!-- IMAGE GRID -->
+  <div class="image-grid">
+    <div>
+      <img src="https://images.unsplash.com/photo-1580281657521-5c1f3c6b8c2c">
+      <p>Awareness</p>
+    </div>
+    <div>
+      <img src="https://images.unsplash.com/photo-1576765608535-5f04d1e3f289">
+      <p>Hospital Care</p>
+    </div>
+    <div>
+      <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b">
+      <p>Doctor Consultation</p>
+    </div>
+    <div>
+      <img src="https://images.unsplash.com/photo-1588776814546-ec7e6c7b0b36">
+      <p>Screening & Testing</p>
+    </div>
+  </div>
 
   <p><b>What is Cancer?</b><br>
   Cancer is a disease where abnormal cells grow uncontrollably in the body.</p>
@@ -159,7 +197,16 @@ button {
 <div class="card">
   <h2>🥗 Healthy Diet</h2>
 
-  <img src="https://images.unsplash.com/photo-1490645935967-10de6ba17061" alt="Healthy food">
+  <div class="image-grid">
+    <div>
+      <img src="https://images.unsplash.com/photo-1490645935967-10de6ba17061">
+      <p>Healthy Food</p>
+    </div>
+    <div>
+      <img src="https://images.unsplash.com/photo-1555992336-03a23c7b20ee">
+      <p>Fresh Vegetables</p>
+    </div>
+  </div>
 
   <h3>✅ Foods to Eat</h3>
   <ul style="text-align:left;">
