@@ -112,48 +112,40 @@ button {
 
 <div id="home">
 
-  <!-- LOGO -->
   <img src="logo.png" class="logo">
-
-  <!-- PROFILE -->
   <img src="me.jpg" class="profile">
+
   <h1>Jesse Kigo Ndirangu</h1>
   <p>Web Developer | Nursing Student</p>
 
-  <!-- ABOUT -->
   <div class="card">
     <h2>About Me</h2>
     <p>
       Born on <b>26th May 2000</b> in <b>Kenya</b>, I am passionate about combining healthcare and technology.
-      I have a strong interest in <b>digitalised healthcare systems</b> and how innovation can improve patient outcomes globally.
+      I have a strong interest in <b>digitalised healthcare systems</b>.
     </p>
   </div>
 
-  <!-- MISSION -->
   <div class="card">
     <h2>🎯 Mission</h2>
-    <p>To use technology and healthcare knowledge to improve patient care and accessibility.</p>
+    <p>Improve healthcare through technology.</p>
   </div>
 
-  <!-- VISION -->
   <div class="card">
     <h2>👁️ Vision</h2>
-    <p>To become a leader in digital healthcare innovation worldwide.</p>
+    <p>Become a leader in digital healthcare innovation.</p>
   </div>
 
-  <!-- GOAL -->
   <div class="card">
     <h2>🚀 Goal</h2>
-    <p>To build smart healthcare systems that support early diagnosis, prevention, and treatment.</p>
+    <p>Build smart healthcare systems for early diagnosis.</p>
   </div>
 
 </div>
 
-<!-- PROJECTS -->
 <div class="card" id="projects">
   <h2>💻 Projects</h2>
   <p><b>Healthcare Awareness Platform</b></p>
-  <p>A system focused on prevention, early detection, and cancer awareness.</p>
   <a href="health.html" style="color:#00ffcc;">View Project →</a>
 </div>
 
@@ -164,9 +156,7 @@ button {
   <form id="appointment-form">
 
     <input type="text" name="name" placeholder="Your Name" required>
-
     <input type="email" name="email" placeholder="Your Email" required>
-
     <input type="text" name="phone" placeholder="Phone Number" required>
 
     <select name="service" required>
@@ -177,7 +167,6 @@ button {
     </select>
 
     <input type="date" name="date" required>
-
     <input type="time" name="time" required>
 
     <textarea name="message" placeholder="Your Message" required></textarea>
@@ -191,33 +180,49 @@ button {
   <p>📞 Call: +447777386639</p>
   <p>📧 Email: jessendirangu933@gmail.com</p>
 
-  <!-- WHATSAPP -->
   <a href="https://wa.me/447777386639" class="whatsapp-btn">
     Chat on WhatsApp
   </a>
 
 </div>
 
-<!-- EMAILJS -->
-<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
-
+<!-- BACKEND CONNECTION -->
 <script>
-(function(){
-  emailjs.init("_d4B5PxjW3HyFbPNF"); // YOUR PUBLIC KEY
-})();
-
-document.getElementById("appointment-form").addEventListener("submit", function(e) {
+document.getElementById("appointment-form").addEventListener("submit", async function(e) {
   e.preventDefault();
 
-  emailjs.sendForm("service_4vigyui", "template_fs4bxon", this)
-    .then(function() {
-      document.getElementById("status").innerHTML =
-        "<span style='color:lightgreen;'>✅ Appointment sent successfully!</span>";
-    }, function(error) {
-      console.log(error);
-      document.getElementById("status").innerHTML =
-        "<span style='color:red;'>❌ Failed to send. Check console.</span>";
+  const form = e.target;
+
+  const data = {
+    name: form.name.value,
+    email: form.email.value,
+    phone: form.phone.value,
+    service: form.service.value,
+    date: form.date.value,
+    time: form.time.value,
+    message: form.message.value
+  };
+
+  try {
+    const res = await fetch("http://localhost:5000/appointment", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(data)
     });
+
+    const result = await res.json();
+
+    document.getElementById("status").innerHTML =
+      "<span style='color:lightgreen;'>✅ " + result.message + "</span>";
+
+    form.reset();
+
+  } catch (error) {
+    document.getElementById("status").innerHTML =
+      "<span style='color:red;'>❌ Failed. Make sure server is running.</span>";
+  }
 });
 </script>
 
