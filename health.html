@@ -3,8 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Health Awareness | Jesse Ndirangu</title>
+<title>Health Platform | Jesse Ndirangu</title>
 
 <style>
 body {
@@ -19,6 +18,8 @@ body {
 nav {
   background: rgba(0,0,0,0.7);
   padding: 15px;
+  position: sticky;
+  top: 0;
 }
 
 nav a {
@@ -28,22 +29,40 @@ nav a {
   font-weight: bold;
 }
 
+/* ANIMATIONS */
+.fade {
+  animation: fadeIn 1.5s ease;
+}
+
+.slide {
+  animation: slideUp 1.2s ease;
+}
+
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+@keyframes slideUp {
+  from {opacity: 0; transform: translateY(40px);}
+  to {opacity: 1; transform: translateY(0);}
+}
+
 /* CONTAINER */
 .container {
   padding: 30px;
 }
 
-/* CARDS */
+/* CARD */
 .card {
   background: rgba(255,255,255,0.1);
   padding: 25px;
   margin: 25px auto;
   border-radius: 12px;
   max-width: 900px;
-  animation: fadeIn 1.5s ease;
 }
 
-/* IMAGES */
+/* IMAGE GRID */
 .image-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -54,6 +73,11 @@ nav a {
   background: rgba(255,255,255,0.05);
   padding: 10px;
   border-radius: 12px;
+  transition: transform 0.3s;
+}
+
+.image-grid div:hover {
+  transform: scale(1.05);
 }
 
 .image-grid img {
@@ -61,11 +85,26 @@ nav a {
   height: 180px;
   object-fit: cover;
   border-radius: 12px;
-  transition: transform 0.3s ease;
 }
 
-.image-grid img:hover {
-  transform: scale(1.05);
+/* ICON ANIMATION */
+.icon {
+  font-size: 40px;
+  animation: float 2s infinite ease-in-out;
+}
+
+@keyframes float {
+  0% {transform: translateY(0);}
+  50% {transform: translateY(-10px);}
+  100% {transform: translateY(0);}
+}
+
+/* INPUT */
+input {
+  padding: 10px;
+  margin: 10px;
+  border-radius: 8px;
+  border: none;
 }
 
 /* BUTTON */
@@ -75,26 +114,15 @@ button {
   padding: 12px 20px;
   border: none;
   border-radius: 8px;
-  margin-top: 10px;
   cursor: pointer;
+  font-weight: bold;
 }
 
-/* INPUT */
-input {
-  padding: 10px;
-  margin: 10px;
-  border-radius: 8px;
-  border: none;
-  width: 200px;
-}
-
-/* ANIMATION */
-@keyframes fadeIn {
-  from {opacity:0; transform: translateY(20px);}
-  to {opacity:1; transform: translateY(0);}
+.result {
+  margin-top: 10px;
+  font-weight: bold;
 }
 </style>
-
 </head>
 
 <body>
@@ -107,31 +135,32 @@ input {
 
 <div class="container">
 
-<h1>🩺 Health Awareness Platform</h1>
+<h1 class="fade">🩺 Health Awareness Platform</h1>
 
-<!-- IMAGES -->
-<div class="card">
-  <h2>🧬 Cancer Awareness</h2>
+<!-- CANCER -->
+<div class="card slide">
+  <div class="icon">🧬</div>
+  <h2>Cancer Awareness</h2>
 
   <div class="image-grid">
 
     <div>
-      <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b">
+      <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=800&q=80">
       <p>Doctor Consultation</p>
     </div>
 
     <div>
-      <img src="https://images.unsplash.com/photo-1576765608535-5f04d1e3f289">
+      <img src="https://images.unsplash.com/photo-1576765608535-5f04d1e3f289?auto=format&fit=crop&w=800&q=80">
       <p>Hospital Care</p>
     </div>
 
     <div>
-      <img src="https://images.unsplash.com/photo-1588776814546-ec7e6c7b0b36">
+      <img src="https://images.unsplash.com/photo-1581594693702-fbdc51b2763b?auto=format&fit=crop&w=800&q=80">
       <p>Screening & Testing</p>
     </div>
 
     <div>
-      <img src="https://images.unsplash.com/photo-1580281657521-5c1f3c6b8c2c">
+      <img src="https://images.unsplash.com/photo-1600959907703-125ba1374a12?auto=format&fit=crop&w=800&q=80">
       <p>Awareness Campaign</p>
     </div>
 
@@ -143,98 +172,102 @@ input {
   <p><b>Common Causes:</b><br>
   Smoking, poor diet, lack of exercise, infections, genetics.</p>
 
-  <p><b>Early Warning Signs:</b></p>
+  <p><b>Warning Signs:</b></p>
   <ul>
     <li>Unexplained weight loss</li>
-    <li>Persistent fatigue</li>
-    <li>Unusual bleeding</li>
-    <li>Lumps or swelling</li>
+    <li>Fatigue</li>
+    <li>Bleeding</li>
+    <li>Lumps</li>
   </ul>
 
   <p><b>Prevention:</b></p>
   <ul>
-    <li>Healthy diet</li>
-    <li>Regular exercise</li>
-    <li>Screening tests</li>
-    <li>Avoid smoking & alcohol</li>
+    <li>Healthy lifestyle</li>
+    <li>Screening</li>
+    <li>No smoking</li>
   </ul>
 </div>
 
 <!-- DIET -->
-<div class="card">
-  <h2>🥗 Healthy Diet</h2>
+<div class="card slide">
+  <div class="icon">🥗</div>
+  <h2>Healthy Diet</h2>
 
-  <p><b>Eat More:</b></p>
+  <p><b>Eat:</b></p>
   <ul>
-    <li>Fruits & vegetables</li>
-    <li>Whole grains</li>
-    <li>Lean protein (fish, chicken)</li>
-    <li>Water</li>
+    <li>Fruits 🍎</li>
+    <li>Vegetables 🥦</li>
+    <li>Fish & protein 🐟</li>
   </ul>
 
   <p><b>Avoid:</b></p>
   <ul>
-    <li>Processed foods</li>
-    <li>Too much sugar</li>
-    <li>Fast food</li>
-    <li>Excess alcohol</li>
+    <li>Fast food 🍔</li>
+    <li>Sugar 🍩</li>
+    <li>Alcohol 🍺</li>
   </ul>
 </div>
 
 <!-- BMI -->
-<div class="card">
-  <h2>⚖️ BMI Calculator</h2>
+<div class="card slide">
+  <div class="icon">⚖️</div>
+  <h2>BMI Calculator</h2>
 
-  <input type="number" id="weight" placeholder="Weight (kg)">
-  <input type="number" id="height" placeholder="Height (m)">
+  <input id="weight" type="number" placeholder="Weight (kg)">
+  <input id="height" type="number" placeholder="Height (m)">
 
   <br>
-  <button onclick="calculateBMI()">Calculate BMI</button>
+  <button onclick="bmi()">Calculate</button>
 
-  <p id="bmiResult"></p>
+  <p class="result" id="bmiResult"></p>
 </div>
 
 <!-- SYMPTOM CHECK -->
-<div class="card">
-  <h2>🧠 Symptom Checker</h2>
+<div class="card slide">
+  <div class="icon">🧠</div>
+  <h2>Symptom Checker</h2>
 
-  <input type="text" id="symptom" placeholder="Enter symptom">
+  <input id="symptom" type="text" placeholder="Enter symptom">
+
   <br>
-  <button onclick="checkSymptom()">Check</button>
+  <button onclick="symptomCheck()">Check</button>
 
-  <p id="symptomResult"></p>
+  <p class="result" id="symptomResult"></p>
 </div>
 
 </div>
 
 <script>
-function calculateBMI() {
+function bmi() {
   let w = document.getElementById("weight").value;
   let h = document.getElementById("height").value;
 
-  let bmi = w / (h * h);
+  if (!w || !h) {
+    document.getElementById("bmiResult").innerHTML = "Enter values";
+    return;
+  }
 
-  let result = "";
+  let b = w / (h*h);
+  let status = "";
 
-  if (bmi < 18.5) result = "Underweight";
-  else if (bmi < 25) result = "Normal";
-  else if (bmi < 30) result = "Overweight";
-  else result = "Obese";
+  if (b < 18.5) status = "Underweight";
+  else if (b < 25) status = "Normal";
+  else if (b < 30) status = "Overweight";
+  else status = "Obese";
 
   document.getElementById("bmiResult").innerHTML =
-    "Your BMI: " + bmi.toFixed(2) + " (" + result + ")";
+    "BMI: " + b.toFixed(2) + " (" + status + ")";
 }
 
-function checkSymptom() {
+function symptomCheck() {
   let s = document.getElementById("symptom").value.toLowerCase();
-  let res = "";
+  let r = "Consult a healthcare professional.";
 
-  if (s.includes("headache")) res = "Possible causes: stress, dehydration.";
-  else if (s.includes("fever")) res = "Possible infection. Monitor temperature.";
-  else if (s.includes("cough")) res = "Could be cold or respiratory infection.";
-  else res = "Consult a healthcare professional.";
+  if (s.includes("headache")) r = "Likely stress or dehydration.";
+  if (s.includes("fever")) r = "Possible infection.";
+  if (s.includes("cough")) r = "Respiratory issue.";
 
-  document.getElementById("symptomResult").innerHTML = res;
+  document.getElementById("symptomResult").innerHTML = r;
 }
 </script>
 
