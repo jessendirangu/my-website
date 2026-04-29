@@ -3,12 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Health Awareness | Jesse</title>
+
+<title>Health Awareness | Jesse Ndirangu</title>
 
 <style>
 body {
-  font-family: Arial;
   margin: 0;
+  font-family: Arial, sans-serif;
   background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
   color: white;
   text-align: center;
@@ -16,40 +17,49 @@ body {
 
 /* NAV */
 nav {
-  background: rgba(0,0,0,0.8);
+  background: rgba(0,0,0,0.7);
   padding: 15px;
 }
 
 nav a {
-  color: #00ffcc;
   margin: 0 15px;
+  color: #00ffcc;
   text-decoration: none;
   font-weight: bold;
+}
+
+/* CONTAINER */
+.container {
+  padding: 30px;
 }
 
 /* CARDS */
 .card {
   background: rgba(255,255,255,0.1);
-  margin: 20px auto;
-  padding: 20px;
+  padding: 25px;
+  margin: 25px auto;
   border-radius: 12px;
   max-width: 900px;
+  animation: fadeIn 1.5s ease;
 }
 
-/* IMAGE GRID */
+/* IMAGES */
 .image-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 15px;
-  margin-top: 15px;
 }
 
 .image-grid div {
-  text-align: center;
+  background: rgba(255,255,255,0.05);
+  padding: 10px;
+  border-radius: 12px;
 }
 
 .image-grid img {
   width: 100%;
+  height: 180px;
+  object-fit: cover;
   border-radius: 12px;
   transition: transform 0.3s ease;
 }
@@ -58,59 +68,73 @@ nav a {
   transform: scale(1.05);
 }
 
-/* FORM */
-input, select, textarea {
-  width: 90%;
+/* BUTTON */
+button {
+  background: #00ffcc;
+  color: black;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+/* INPUT */
+input {
   padding: 10px;
   margin: 10px;
   border-radius: 8px;
   border: none;
+  width: 200px;
 }
 
-button {
-  background: #00ffcc;
-  color: black;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
+/* ANIMATION */
+@keyframes fadeIn {
+  from {opacity:0; transform: translateY(20px);}
+  to {opacity:1; transform: translateY(0);}
 }
 </style>
+
 </head>
 
 <body>
 
-<!-- NAV -->
 <nav>
   <a href="index.html">Home</a>
   <a href="index.html#projects">Projects</a>
   <a href="health.html">Health</a>
 </nav>
 
+<div class="container">
+
 <h1>🩺 Health Awareness Platform</h1>
 
-<!-- ================= CANCER ================= -->
+<!-- IMAGES -->
 <div class="card">
   <h2>🧬 Cancer Awareness</h2>
 
-  <!-- IMAGE GRID -->
   <div class="image-grid">
-    <div>
-      <img src="https://images.unsplash.com/photo-1580281657521-5c1f3c6b8c2c">
-      <p>Awareness</p>
-    </div>
-    <div>
-      <img src="https://images.unsplash.com/photo-1576765608535-5f04d1e3f289">
-      <p>Hospital Care</p>
-    </div>
+
     <div>
       <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b">
       <p>Doctor Consultation</p>
     </div>
+
+    <div>
+      <img src="https://images.unsplash.com/photo-1576765608535-5f04d1e3f289">
+      <p>Hospital Care</p>
+    </div>
+
     <div>
       <img src="https://images.unsplash.com/photo-1588776814546-ec7e6c7b0b36">
       <p>Screening & Testing</p>
     </div>
+
+    <div>
+      <img src="https://images.unsplash.com/photo-1580281657521-5c1f3c6b8c2c">
+      <p>Awareness Campaign</p>
+    </div>
+
   </div>
 
   <p><b>What is Cancer?</b><br>
@@ -120,7 +144,7 @@ button {
   Smoking, poor diet, lack of exercise, infections, genetics.</p>
 
   <p><b>Early Warning Signs:</b></p>
-  <ul style="text-align:left;">
+  <ul>
     <li>Unexplained weight loss</li>
     <li>Persistent fatigue</li>
     <li>Unusual bleeding</li>
@@ -128,163 +152,89 @@ button {
   </ul>
 
   <p><b>Prevention:</b></p>
-  <ul style="text-align:left;">
+  <ul>
     <li>Healthy diet</li>
     <li>Regular exercise</li>
     <li>Screening tests</li>
     <li>Avoid smoking & alcohol</li>
   </ul>
+</div>
 
-  <p><b>Treatment Options:</b></p>
-  <ul style="text-align:left;">
-    <li>Surgery</li>
-    <li>Chemotherapy</li>
-    <li>Radiotherapy</li>
-    <li>Immunotherapy</li>
+<!-- DIET -->
+<div class="card">
+  <h2>🥗 Healthy Diet</h2>
+
+  <p><b>Eat More:</b></p>
+  <ul>
+    <li>Fruits & vegetables</li>
+    <li>Whole grains</li>
+    <li>Lean protein (fish, chicken)</li>
+    <li>Water</li>
   </ul>
 
-  <p style="color:#00ffcc;">
-  Early detection saves lives. Always seek medical advice if symptoms persist.
-  </p>
+  <p><b>Avoid:</b></p>
+  <ul>
+    <li>Processed foods</li>
+    <li>Too much sugar</li>
+    <li>Fast food</li>
+    <li>Excess alcohol</li>
+  </ul>
 </div>
 
-<!-- ================= SYMPTOM CHECKER ================= -->
-<div class="card">
-  <h2>🧠 Symptom Checker</h2>
-
-  <label>Unexplained weight loss?</label>
-  <select id="weightLoss">
-    <option>No</option>
-    <option>Yes</option>
-  </select>
-
-  <label>Persistent fatigue?</label>
-  <select id="fatigue">
-    <option>No</option>
-    <option>Yes</option>
-  </select>
-
-  <label>Persistent pain?</label>
-  <select id="pain">
-    <option>No</option>
-    <option>Yes</option>
-  </select>
-
-  <label>Unusual bleeding?</label>
-  <select id="bleeding">
-    <option>No</option>
-    <option>Yes</option>
-  </select>
-
-  <button onclick="checkSymptoms()">Check Result</button>
-
-  <p id="result"></p>
-</div>
-
-<!-- ================= BMI ================= -->
+<!-- BMI -->
 <div class="card">
   <h2>⚖️ BMI Calculator</h2>
 
-  <input type="number" id="height" placeholder="Height (cm)">
   <input type="number" id="weight" placeholder="Weight (kg)">
+  <input type="number" id="height" placeholder="Height (m)">
 
+  <br>
   <button onclick="calculateBMI()">Calculate BMI</button>
 
   <p id="bmiResult"></p>
 </div>
 
-<!-- ================= DIET ================= -->
+<!-- SYMPTOM CHECK -->
 <div class="card">
-  <h2>🥗 Healthy Diet</h2>
+  <h2>🧠 Symptom Checker</h2>
 
-  <div class="image-grid">
-    <div>
-      <img src="https://images.unsplash.com/photo-1490645935967-10de6ba17061">
-      <p>Healthy Food</p>
-    </div>
-    <div>
-      <img src="https://images.unsplash.com/photo-1555992336-03a23c7b20ee">
-      <p>Fresh Vegetables</p>
-    </div>
-  </div>
+  <input type="text" id="symptom" placeholder="Enter symptom">
+  <br>
+  <button onclick="checkSymptom()">Check</button>
 
-  <h3>✅ Foods to Eat</h3>
-  <ul style="text-align:left;">
-    <li>🥦 Vegetables (broccoli, spinach, carrots)</li>
-    <li>🍎 Fruits (apples, bananas, berries)</li>
-    <li>🍗 Lean protein (chicken, fish, beans)</li>
-    <li>🥛 Dairy (milk, yogurt)</li>
-    <li>🌾 Whole grains (oats, brown rice)</li>
-    <li>💧 Drink plenty of water</li>
-  </ul>
-
-  <h3>⚠️ Foods to Avoid</h3>
-  <ul style="text-align:left;">
-    <li>🍔 Fast foods</li>
-    <li>🍟 Fried foods</li>
-    <li>🥤 Sugary drinks</li>
-    <li>🍩 Processed snacks</li>
-    <li>🚬 Smoking & alcohol</li>
-  </ul>
-
-  <p style="color:#00ffcc;">
-  Healthy eating reduces the risk of cancer, heart disease, and diabetes.
-  </p>
+  <p id="symptomResult"></p>
 </div>
 
-<!-- DISCLAIMER -->
-<div class="card">
-  <p style="color:orange;">
-    ⚠️ This tool provides general health information only and does not replace professional medical advice.
-  </p>
 </div>
 
-<!-- SCRIPT -->
 <script>
-function checkSymptoms() {
-  let weightLoss = document.getElementById("weightLoss").value;
-  let fatigue = document.getElementById("fatigue").value;
-  let pain = document.getElementById("pain").value;
-  let bleeding = document.getElementById("bleeding").value;
+function calculateBMI() {
+  let w = document.getElementById("weight").value;
+  let h = document.getElementById("height").value;
+
+  let bmi = w / (h * h);
 
   let result = "";
 
-  if (bleeding === "Yes") {
-    result = "🚨 Urgent: Seek medical attention immediately.";
-  }
-  else if (weightLoss === "Yes" && fatigue === "Yes") {
-    result = "⚠️ Possible serious condition. See a GP.";
-  }
-  else if (pain === "Yes") {
-    result = "⚠️ Monitor symptoms. If persistent, consult a doctor.";
-  }
-  else {
-    result = "✅ Low risk. Maintain a healthy lifestyle.";
-  }
-
-  document.getElementById("result").innerHTML = result;
-}
-
-function calculateBMI() {
-  let height = document.getElementById("height").value / 100;
-  let weight = document.getElementById("weight").value;
-
-  if (!height || !weight) {
-    document.getElementById("bmiResult").innerHTML = "⚠️ Enter valid values.";
-    return;
-  }
-
-  let bmi = (weight / (height * height)).toFixed(1);
-
-  let category = "";
-
-  if (bmi < 18.5) category = "Underweight";
-  else if (bmi < 25) category = "Normal weight";
-  else if (bmi < 30) category = "Overweight";
-  else category = "Obese";
+  if (bmi < 18.5) result = "Underweight";
+  else if (bmi < 25) result = "Normal";
+  else if (bmi < 30) result = "Overweight";
+  else result = "Obese";
 
   document.getElementById("bmiResult").innerHTML =
-    "Your BMI: <b>" + bmi + "</b> (" + category + ")";
+    "Your BMI: " + bmi.toFixed(2) + " (" + result + ")";
+}
+
+function checkSymptom() {
+  let s = document.getElementById("symptom").value.toLowerCase();
+  let res = "";
+
+  if (s.includes("headache")) res = "Possible causes: stress, dehydration.";
+  else if (s.includes("fever")) res = "Possible infection. Monitor temperature.";
+  else if (s.includes("cough")) res = "Could be cold or respiratory infection.";
+  else res = "Consult a healthcare professional.";
+
+  document.getElementById("symptomResult").innerHTML = res;
 }
 </script>
 
