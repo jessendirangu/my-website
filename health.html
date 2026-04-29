@@ -3,57 +3,58 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Health Awareness | Jesse Ndirangu</title>
+<title>Health Awareness | Jesse</title>
 
 <style>
 body {
+  font-family: Arial;
   margin: 0;
-  font-family: Arial, sans-serif;
   background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
   color: white;
-}
-
-nav {
-  background: rgba(0,0,0,0.7);
-  padding: 15px;
   text-align: center;
 }
 
+nav {
+  background: rgba(0,0,0,0.8);
+  padding: 15px;
+}
+
 nav a {
-  margin: 0 15px;
   color: #00ffcc;
+  margin: 0 15px;
   text-decoration: none;
   font-weight: bold;
 }
 
-.container {
-  padding: 40px 20px;
-  max-width: 900px;
-  margin: auto;
-}
-
 .card {
   background: rgba(255,255,255,0.1);
-  padding: 25px;
-  margin: 20px 0;
+  margin: 20px auto;
+  padding: 20px;
   border-radius: 12px;
+  max-width: 800px;
 }
 
-h1, h2 {
-  color: #00ffcc;
+img {
+  width: 100%;
+  border-radius: 10px;
+  margin-top: 10px;
 }
 
-ul {
-  line-height: 1.6;
+input, select, textarea {
+  width: 90%;
+  padding: 10px;
+  margin: 10px;
+  border-radius: 8px;
+  border: none;
 }
 
-.highlight {
+button {
   background: #00ffcc;
   color: black;
-  padding: 15px;
-  border-radius: 10px;
-  font-weight: bold;
-  margin-top: 20px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
 }
 </style>
 </head>
@@ -62,126 +63,183 @@ ul {
 
 <nav>
   <a href="index.html">Home</a>
+  <a href="index.html#projects">Projects</a>
   <a href="health.html">Health</a>
-  <a href="index.html#contact">Contact</a>
 </nav>
 
-<div class="container">
+<h1>🩺 Health Awareness Platform</h1>
 
-  <h1>Cancer Awareness</h1>
+<!-- ================= CANCER ================= -->
+<div class="card">
+  <h2>🧬 Cancer Awareness</h2>
 
-  <div class="card">
-    <h2>What is Cancer?</h2>
-    <p>
-      Cancer is a condition where abnormal cells grow uncontrollably and may spread to other parts of the body.
-    </p>
-  </div>
+  <img src="https://images.unsplash.com/photo-1580281657521-5c1f3c6b8c2c" alt="Cancer awareness">
 
-  <div class="card">
-    <h2>Causes & Risk Factors</h2>
-    <ul>
-      <li>Smoking and tobacco use</li>
-      <li>Poor diet and obesity</li>
-      <li>Lack of exercise</li>
-      <li>Alcohol consumption</li>
-      <li>Genetic predisposition</li>
-      <li>Exposure to harmful chemicals</li>
-    </ul>
-  </div>
+  <p><b>What is Cancer?</b><br>
+  Cancer is a disease where abnormal cells grow uncontrollably in the body.</p>
 
-  <div class="card">
-    <h2>Common Types of Cancer</h2>
-    <ul>
-      <li>Breast cancer</li>
-      <li>Lung cancer</li>
-      <li>Prostate cancer</li>
-      <li>Cervical cancer</li>
-      <li>Colorectal cancer</li>
-    </ul>
-  </div>
+  <p><b>Common Causes:</b><br>
+  Smoking, poor diet, lack of exercise, infections, genetics.</p>
 
-  <div class="card">
-    <h2>Signs and Symptoms</h2>
-    <ul>
-      <li>Unexplained weight loss</li>
-      <li>Persistent fatigue</li>
-      <li>Lumps or swelling</li>
-      <li>Chronic pain</li>
-      <li>Unusual bleeding</li>
-    </ul>
-  </div>
+  <p><b>Early Warning Signs:</b></p>
+  <ul style="text-align:left;">
+    <li>Unexplained weight loss</li>
+    <li>Persistent fatigue</li>
+    <li>Unusual bleeding</li>
+    <li>Lumps or swelling</li>
+  </ul>
 
-  <div class="card">
-    <h2>Screening & Diagnosis</h2>
-    <ul>
-      <li>Blood tests</li>
-      <li>Biopsy</li>
-      <li>X-ray, CT scan, MRI</li>
-      <li>Pap smear and mammogram</li>
-    </ul>
-  </div>
+  <p><b>Prevention:</b></p>
+  <ul style="text-align:left;">
+    <li>Healthy diet</li>
+    <li>Regular exercise</li>
+    <li>Screening tests</li>
+    <li>Avoid smoking & alcohol</li>
+  </ul>
 
-  <div class="card">
-    <h2>Prevention</h2>
-    <ul>
-      <li>Healthy balanced diet</li>
-      <li>Regular exercise</li>
-      <li>Avoid smoking</li>
-      <li>Limit alcohol intake</li>
-      <li>Regular medical checkups</li>
-    </ul>
-  </div>
+  <p><b>Treatment Options:</b></p>
+  <ul style="text-align:left;">
+    <li>Surgery</li>
+    <li>Chemotherapy</li>
+    <li>Radiotherapy</li>
+    <li>Immunotherapy</li>
+  </ul>
 
-  <div class="card">
-    <h2>Treatment Options</h2>
-    <ul>
-      <li>Surgery</li>
-      <li>Chemotherapy</li>
-      <li>Radiotherapy</li>
-      <li>Immunotherapy</li>
-      <li>Targeted therapy</li>
-    </ul>
-  </div>
-
-  <div class="card">
-    <h2>Side Effects of Treatment</h2>
-    <ul>
-      <li>Fatigue</li>
-      <li>Nausea and vomiting</li>
-      <li>Hair loss</li>
-      <li>Weak immune system</li>
-    </ul>
-  </div>
-
-  <div class="card">
-    <h2>Patient Support & Care</h2>
-    <ul>
-      <li>Emotional support</li>
-      <li>Nutrition and hydration</li>
-      <li>Pain management</li>
-      <li>Family support</li>
-    </ul>
-  </div>
-
-  <div class="card">
-    <h2>When to Seek Urgent Help</h2>
-    <ul>
-      <li>Severe persistent pain</li>
-      <li>Difficulty breathing</li>
-      <li>Uncontrolled bleeding</li>
-      <li>Rapid weight loss</li>
-    </ul>
-  </div>
-
-  <div class="highlight">
-    Early detection saves lives. Regular screening is essential.
-  </div>
-
-  <p style="margin-top:20px; font-size:14px; opacity:0.8;">
-    ⚠️ This information is for educational purposes only and does not replace professional medical advice.
+  <p style="color:#00ffcc;">
+  Early detection saves lives. Always seek medical advice if symptoms persist.
   </p>
-
 </div>
+
+<!-- ================= SYMPTOM CHECKER ================= -->
+<div class="card">
+  <h2>🧠 Symptom Checker</h2>
+
+  <label>Unexplained weight loss?</label>
+  <select id="weightLoss">
+    <option>No</option>
+    <option>Yes</option>
+  </select>
+
+  <label>Persistent fatigue?</label>
+  <select id="fatigue">
+    <option>No</option>
+    <option>Yes</option>
+  </select>
+
+  <label>Persistent pain?</label>
+  <select id="pain">
+    <option>No</option>
+    <option>Yes</option>
+  </select>
+
+  <label>Unusual bleeding?</label>
+  <select id="bleeding">
+    <option>No</option>
+    <option>Yes</option>
+  </select>
+
+  <button onclick="checkSymptoms()">Check Result</button>
+
+  <p id="result"></p>
+</div>
+
+<!-- ================= BMI ================= -->
+<div class="card">
+  <h2>⚖️ BMI Calculator</h2>
+
+  <input type="number" id="height" placeholder="Height (cm)">
+  <input type="number" id="weight" placeholder="Weight (kg)">
+
+  <button onclick="calculateBMI()">Calculate BMI</button>
+
+  <p id="bmiResult"></p>
+</div>
+
+<!-- ================= DIET ================= -->
+<div class="card">
+  <h2>🥗 Healthy Diet</h2>
+
+  <img src="https://images.unsplash.com/photo-1490645935967-10de6ba17061" alt="Healthy food">
+
+  <h3>✅ Foods to Eat</h3>
+  <ul style="text-align:left;">
+    <li>🥦 Vegetables (broccoli, spinach, carrots)</li>
+    <li>🍎 Fruits (apples, bananas, berries)</li>
+    <li>🍗 Lean protein (chicken, fish, beans)</li>
+    <li>🥛 Dairy (milk, yogurt)</li>
+    <li>🌾 Whole grains (oats, brown rice)</li>
+    <li>💧 Drink plenty of water</li>
+  </ul>
+
+  <h3>⚠️ Foods to Avoid</h3>
+  <ul style="text-align:left;">
+    <li>🍔 Fast foods</li>
+    <li>🍟 Fried foods</li>
+    <li>🥤 Sugary drinks</li>
+    <li>🍩 Processed snacks</li>
+    <li>🚬 Smoking & alcohol</li>
+  </ul>
+
+  <p style="color:#00ffcc;">
+  Healthy eating reduces the risk of cancer, heart disease, and diabetes.
+  </p>
+</div>
+
+<!-- DISCLAIMER -->
+<div class="card">
+  <p style="color:orange;">
+    ⚠️ This tool provides general health information only and does not replace professional medical advice.
+  </p>
+</div>
+
+<!-- SCRIPT -->
+<script>
+function checkSymptoms() {
+  let weightLoss = document.getElementById("weightLoss").value;
+  let fatigue = document.getElementById("fatigue").value;
+  let pain = document.getElementById("pain").value;
+  let bleeding = document.getElementById("bleeding").value;
+
+  let result = "";
+
+  if (bleeding === "Yes") {
+    result = "🚨 Urgent: Seek medical attention immediately.";
+  }
+  else if (weightLoss === "Yes" && fatigue === "Yes") {
+    result = "⚠️ Possible serious condition. See a GP.";
+  }
+  else if (pain === "Yes") {
+    result = "⚠️ Monitor symptoms. If persistent, consult a doctor.";
+  }
+  else {
+    result = "✅ Low risk. Maintain a healthy lifestyle.";
+  }
+
+  document.getElementById("result").innerHTML = result;
+}
+
+function calculateBMI() {
+  let height = document.getElementById("height").value / 100;
+  let weight = document.getElementById("weight").value;
+
+  if (!height || !weight) {
+    document.getElementById("bmiResult").innerHTML = "⚠️ Enter valid values.";
+    return;
+  }
+
+  let bmi = (weight / (height * height)).toFixed(1);
+
+  let category = "";
+
+  if (bmi < 18.5) category = "Underweight";
+  else if (bmi < 25) category = "Normal weight";
+  else if (bmi < 30) category = "Overweight";
+  else category = "Obese";
+
+  document.getElementById("bmiResult").innerHTML =
+    "Your BMI: <b>" + bmi + "</b> (" + category + ")";
+}
+</script>
 
 </body>
 </html>
