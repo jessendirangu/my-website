@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Jesse Ndirangu | Digital Healthcare</title>
+<title>Jesse Ndirangu | Portfolio</title>
 
 <style>
 body {
@@ -29,11 +29,24 @@ nav a {
   font-weight: bold;
 }
 
-/* SECTIONS */
-.container {
-  padding: 40px 20px;
+/* LOGO */
+.logo {
+  width: 120px;
+  margin: 20px auto;
+  display: block;
 }
 
+/* PROFILE */
+img.profile {
+  width: 150px;
+  border-radius: 50%;
+}
+
+h1 {
+  color: #00ffcc;
+}
+
+/* CARDS */
 .card {
   background: rgba(255,255,255,0.1);
   padding: 25px;
@@ -48,16 +61,7 @@ nav a {
   to { opacity: 1; transform: translateY(0); }
 }
 
-img.profile {
-  width: 150px;
-  border-radius: 50%;
-}
-
-h1 {
-  color: #00ffcc;
-}
-
-/* FORM */
+/* INPUTS */
 input, textarea, select {
   width: 90%;
   padding: 12px;
@@ -66,6 +70,7 @@ input, textarea, select {
   border: none;
 }
 
+/* BUTTON */
 button {
   background: #00ffcc;
   color: black;
@@ -76,82 +81,106 @@ button {
   font-weight: bold;
 }
 
-button:hover {
-  background: #00ddb3;
+/* WHATSAPP */
+.whatsapp-btn {
+  display: inline-block;
+  background: #25D366;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  margin-top: 15px;
 }
 
+/* STATUS */
 #status {
   margin-top: 15px;
   font-weight: bold;
-}
-
-/* WHATSAPP */
-.whatsapp {
-  display: inline-block;
-  margin-top: 15px;
-  background: #25D366;
-  color: white;
-  padding: 10px 20px;
-  border-radius: 8px;
-  text-decoration: none;
 }
 </style>
 </head>
 
 <body>
 
+<!-- NAV -->
 <nav>
   <a href="#home">Home</a>
-  <a href="#services">Services</a>
+  <a href="#projects">Projects</a>
   <a href="health.html">Health</a>
   <a href="#contact">Contact</a>
 </nav>
 
-<div class="container" id="home">
+<div id="home">
+
+  <!-- LOGO -->
+  <img src="logo.png" class="logo">
+
+  <!-- PROFILE -->
   <img src="me.jpg" class="profile">
   <h1>Jesse Kigo Ndirangu</h1>
-  <p>Digital Healthcare | Nursing Professional</p>
+  <p>Web Developer | Nursing Student</p>
 
+  <!-- ABOUT -->
   <div class="card">
     <h2>About Me</h2>
     <p>
       Born on <b>26th May 2000</b> in <b>Kenya</b>, I am passionate about combining healthcare and technology.
-      I focus on <b>digital healthcare systems</b> to improve patient access, prevention, and early diagnosis.
+      I have a strong interest in <b>digitalised healthcare systems</b> and how innovation can improve patient outcomes globally.
     </p>
   </div>
+
+  <!-- MISSION -->
+  <div class="card">
+    <h2>🎯 Mission</h2>
+    <p>To use technology and healthcare knowledge to improve patient care and accessibility.</p>
+  </div>
+
+  <!-- VISION -->
+  <div class="card">
+    <h2>👁️ Vision</h2>
+    <p>To become a leader in digital healthcare innovation worldwide.</p>
+  </div>
+
+  <!-- GOAL -->
+  <div class="card">
+    <h2>🚀 Goal</h2>
+    <p>To build smart healthcare systems that support early diagnosis, prevention, and treatment.</p>
+  </div>
+
 </div>
 
-<!-- SERVICES -->
-<div class="card" id="services">
-  <h2>💼 Services</h2>
-
-  <p><b>✔️ Health Consultation</b> – Get professional advice</p>
-  <p><b>✔️ Home Care Booking</b> – Schedule care services</p>
-  <p><b>✔️ Health Awareness</b> – Learn prevention & early detection</p>
-
+<!-- PROJECTS -->
+<div class="card" id="projects">
+  <h2>💻 Projects</h2>
+  <p><b>Healthcare Awareness Platform</b></p>
+  <p>A system focused on prevention, early detection, and cancer awareness.</p>
+  <a href="health.html" style="color:#00ffcc;">View Project →</a>
 </div>
 
-<!-- BOOKING -->
+<!-- CONTACT -->
 <div class="card" id="contact">
-  <h2>📅 Book Appointment</h2>
+  <h2>Book Appointment</h2>
 
   <form id="appointment-form">
 
     <input type="text" name="name" placeholder="Your Name" required>
+
     <input type="email" name="email" placeholder="Your Email" required>
+
     <input type="text" name="phone" placeholder="Phone Number" required>
 
     <select name="service" required>
       <option value="">Select Service</option>
       <option>Health Consultation</option>
-      <option>Home Care Booking</option>
-      <option>Health Advice</option>
+      <option>Cancer Awareness</option>
+      <option>General Advice</option>
     </select>
 
     <input type="date" name="date" required>
+
     <input type="time" name="time" required>
 
-    <textarea name="message" placeholder="Describe your issue" required></textarea>
+    <textarea name="message" placeholder="Your Message" required></textarea>
 
     <button type="submit">Book Appointment</button>
 
@@ -162,7 +191,10 @@ button:hover {
   <p>📞 Call: +447777386639</p>
   <p>📧 Email: jessendirangu933@gmail.com</p>
 
-  <a href="https://wa.me/447777386639" class="whatsapp">Chat on WhatsApp</a>
+  <!-- WHATSAPP -->
+  <a href="https://wa.me/447777386639" class="whatsapp-btn">
+    Chat on WhatsApp
+  </a>
 
 </div>
 
@@ -171,20 +203,20 @@ button:hover {
 
 <script>
 (function(){
-  emailjs.init("YOUR_PUBLIC_KEY"); // replace
+  emailjs.init("_d4B5PxjW3HyFbPNF"); // YOUR PUBLIC KEY
 })();
 
 document.getElementById("appointment-form").addEventListener("submit", function(e) {
   e.preventDefault();
 
-  emailjs.sendForm("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", this)
+  emailjs.sendForm("service_4vigyui", "template_fs4bxon", this)
     .then(function() {
       document.getElementById("status").innerHTML =
-        "<span style='color:lightgreen;'>✅ Booking received! I will contact you shortly.</span>";
+        "<span style='color:lightgreen;'>✅ Appointment sent successfully!</span>";
     }, function(error) {
       console.log(error);
       document.getElementById("status").innerHTML =
-        "<span style='color:red;'>❌ Failed to send. Try again.</span>";
+        "<span style='color:red;'>❌ Failed to send. Check console.</span>";
     });
 });
 </script>
