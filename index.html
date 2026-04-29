@@ -14,7 +14,6 @@ body {
   text-align: center;
 }
 
-/* NAV */
 nav {
   position: sticky;
   top: 0;
@@ -29,14 +28,11 @@ nav a {
   font-weight: bold;
 }
 
-/* LOGO */
 .logo {
   width: 120px;
   margin: 20px auto;
-  display: block;
 }
 
-/* PROFILE */
 img.profile {
   width: 150px;
   border-radius: 50%;
@@ -46,22 +42,14 @@ h1 {
   color: #00ffcc;
 }
 
-/* CARDS */
 .card {
   background: rgba(255,255,255,0.1);
   padding: 25px;
   margin: 20px auto;
   border-radius: 12px;
   max-width: 700px;
-  animation: fadeIn 1.5s ease-in-out;
 }
 
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-/* INPUTS */
 input, textarea, select {
   width: 90%;
   padding: 12px;
@@ -70,7 +58,6 @@ input, textarea, select {
   border: none;
 }
 
-/* BUTTON */
 button {
   background: #00ffcc;
   color: black;
@@ -81,7 +68,6 @@ button {
   font-weight: bold;
 }
 
-/* WHATSAPP */
 .whatsapp-btn {
   display: inline-block;
   background: #25D366;
@@ -92,7 +78,6 @@ button {
   margin-top: 15px;
 }
 
-/* STATUS */
 #status {
   margin-top: 15px;
   font-weight: bold;
@@ -102,7 +87,6 @@ button {
 
 <body>
 
-<!-- NAV -->
 <nav>
   <a href="#home">Home</a>
   <a href="#projects">Projects</a>
@@ -113,32 +97,26 @@ button {
 <div id="home">
 
   <img src="logo.png" class="logo">
-  <img src="me.jpg" class="profile">
 
+  <img src="me.jpg" class="profile">
   <h1>Jesse Kigo Ndirangu</h1>
   <p>Web Developer | Nursing Student</p>
 
   <div class="card">
     <h2>About Me</h2>
     <p>
-      Born on <b>26th May 2000</b> in <b>Kenya</b>, I am passionate about combining healthcare and technology.
-      I have a strong interest in <b>digitalised healthcare systems</b>.
+      Born on <b>26th May 2000</b> in <b>Kenya</b>, passionate about digital healthcare systems.
     </p>
   </div>
 
   <div class="card">
     <h2>🎯 Mission</h2>
-    <p>Improve healthcare through technology.</p>
+    <p>Improve healthcare using technology.</p>
   </div>
 
   <div class="card">
     <h2>👁️ Vision</h2>
     <p>Become a leader in digital healthcare innovation.</p>
-  </div>
-
-  <div class="card">
-    <h2>🚀 Goal</h2>
-    <p>Build smart healthcare systems for early diagnosis.</p>
   </div>
 
 </div>
@@ -149,7 +127,6 @@ button {
   <a href="health.html" style="color:#00ffcc;">View Project →</a>
 </div>
 
-<!-- CONTACT -->
 <div class="card" id="contact">
   <h2>Book Appointment</h2>
 
@@ -191,37 +168,36 @@ button {
 document.getElementById("appointment-form").addEventListener("submit", async function(e) {
   e.preventDefault();
 
-  const form = e.target;
-
-  const data = {
-    name: form.name.value,
-    email: form.email.value,
-    phone: form.phone.value,
-    service: form.service.value,
-    date: form.date.value,
-    time: form.time.value,
-    message: form.message.value
+  const formData = {
+    name: this.name.value,
+    email: this.email.value,
+    phone: this.phone.value,
+    service: this.service.value,
+    date: this.date.value,
+    time: this.time.value,
+    message: this.message.value
   };
 
   try {
-    const res = await fetch("http://localhost:5000/appointment", {
+    const response = await fetch("http://localhost:5000/appointment", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
       },
-      body: JSON.stringify(data)
+      body: JSON.stringify(formData)
     });
 
-    const result = await res.json();
+    const result = await response.json();
 
     document.getElementById("status").innerHTML =
-      "<span style='color:lightgreen;'>✅ " + result.message + "</span>";
+      "<span style='color:lightgreen;'>✅ Appointment saved!</span>";
 
-    form.reset();
+    document.getElementById("appointment-form").reset();
 
   } catch (error) {
+    console.error(error);
     document.getElementById("status").innerHTML =
-      "<span style='color:red;'>❌ Failed. Make sure server is running.</span>";
+      "<span style='color:red;'>❌ Failed to send</span>";
   }
 });
 </script>
