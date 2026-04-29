@@ -34,7 +34,7 @@ nav a {
   display: block;
 }
 
-img.profile {
+.profile {
   width: 150px;
   border-radius: 50%;
 }
@@ -90,45 +90,79 @@ button {
 
 <nav>
   <a href="#home">Home</a>
+  <a href="#about">About</a>
+  <a href="#vision">Vision</a>
   <a href="#projects">Projects</a>
   <a href="health.html">Health</a>
   <a href="#contact">Contact</a>
 </nav>
 
+<!-- HOME -->
 <div id="home">
+  <!-- If your images are NOT in a folder, use src="logo.png" -->
   <img src="logo.png" class="logo">
   <img src="me.jpg" class="profile">
-  <h1>Jesse Kigo Ndirangu</h1>
-  <p>Web Developer | Nursing Student</p>
 
-  <div class="card">
-    <h2>About Me</h2>
-    <p>
-      Passionate about combining healthcare and technology to improve patient outcomes.
-    </p>
-  </div>
+  <h1>Jesse Kigo Ndirangu</h1>
+  <p>Web Developer | Nurse</p>
 </div>
 
+<!-- ABOUT -->
+<div class="card" id="about">
+  <h2>About Me</h2>
+  <p>
+    I am a nurse and aspiring web developer passionate about using
+    technology to improve healthcare systems and patient care.
+  </p>
+</div>
+
+<!-- VISION -->
+<div class="card" id="vision">
+  <h2>Vision</h2>
+  <p>
+    To bridge the gap between healthcare and technology by building innovative
+    digital solutions that improve patient outcomes globally.
+  </p>
+</div>
+
+<!-- MISSION -->
+<div class="card">
+  <h2>Mission</h2>
+  <p>
+    To develop user-friendly healthcare applications, educate communities on
+    health awareness, and continuously grow in both medical and tech fields.
+  </p>
+</div>
+
+<!-- PROJECTS -->
+<div class="card" id="projects">
+  <h2>Projects</h2>
+  <p>🚀 Appointment Booking System (This Website)</p>
+  <p>🩺 Health Awareness Platform (Coming Soon)</p>
+  <p>💻 Personal Portfolio Website</p>
+</div>
+
+<!-- CONTACT -->
 <div class="card" id="contact">
   <h2>Book Appointment</h2>
 
   <form id="appointment-form">
 
-    <input type="text" name="name" placeholder="Your Name" required>
-    <input type="email" name="email" placeholder="Your Email" required>
-    <input type="text" name="phone" placeholder="Phone Number" required>
+    <input type="text" placeholder="Your Name" required>
+    <input type="email" placeholder="Your Email" required>
+    <input type="text" placeholder="Phone Number" required>
 
-    <select name="service" required>
+    <select required>
       <option value="">Select Service</option>
       <option>Health Consultation</option>
       <option>Cancer Awareness</option>
       <option>General Advice</option>
     </select>
 
-    <input type="date" name="date" required>
-    <input type="time" name="time" required>
+    <input type="date" required>
+    <input type="time" required>
 
-    <textarea name="message" placeholder="Your Message" required></textarea>
+    <textarea placeholder="Your Message" required></textarea>
 
     <button type="submit">Book Appointment</button>
 
@@ -145,42 +179,14 @@ button {
 
 </div>
 
-<!-- ✅ BACKEND CONNECTION SCRIPT -->
 <script>
-document.getElementById("appointment-form").addEventListener("submit", async function(e) {
+document.getElementById("appointment-form").addEventListener("submit", function(e) {
   e.preventDefault();
 
-  const formData = {
-    name: this.name.value,
-    email: this.email.value,
-    phone: this.phone.value,
-    service: this.service.value,
-    date: this.date.value,
-    time: this.time.value,
-    message: this.message.value
-  };
+  document.getElementById("status").innerHTML =
+    "<span style='color:lightgreen;'>✅ Booking submitted</span>";
 
-  try {
-    const res = await fetch("http://localhost:5000/appointments", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify(formData)
-    });
-
-    if (res.ok) {
-      document.getElementById("status").innerHTML =
-        "<span style='color:lightgreen;'>✅ Appointment saved!</span>";
-      this.reset();
-    } else {
-      throw new Error("Failed");
-    }
-
-  } catch (err) {
-    document.getElementById("status").innerHTML =
-      "<span style='color:red;'>❌ Failed to send</span>";
-  }
+  this.reset();
 });
 </script>
 
