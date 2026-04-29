@@ -31,6 +31,7 @@ nav a {
 .logo {
   width: 120px;
   margin: 20px auto;
+  display: block;
 }
 
 img.profile {
@@ -95,9 +96,7 @@ button {
 </nav>
 
 <div id="home">
-
   <img src="logo.png" class="logo">
-
   <img src="me.jpg" class="profile">
   <h1>Jesse Kigo Ndirangu</h1>
   <p>Web Developer | Nursing Student</p>
@@ -105,26 +104,9 @@ button {
   <div class="card">
     <h2>About Me</h2>
     <p>
-      Born on <b>26th May 2000</b> in <b>Kenya</b>, passionate about digital healthcare systems.
+      Passionate about combining healthcare and technology to improve patient outcomes.
     </p>
   </div>
-
-  <div class="card">
-    <h2>🎯 Mission</h2>
-    <p>Improve healthcare using technology.</p>
-  </div>
-
-  <div class="card">
-    <h2>👁️ Vision</h2>
-    <p>Become a leader in digital healthcare innovation.</p>
-  </div>
-
-</div>
-
-<div class="card" id="projects">
-  <h2>💻 Projects</h2>
-  <p><b>Healthcare Awareness Platform</b></p>
-  <a href="health.html" style="color:#00ffcc;">View Project →</a>
 </div>
 
 <div class="card" id="contact">
@@ -163,7 +145,7 @@ button {
 
 </div>
 
-<!-- BACKEND CONNECTION -->
+<!-- ✅ BACKEND CONNECTION SCRIPT -->
 <script>
 document.getElementById("appointment-form").addEventListener("submit", async function(e) {
   e.preventDefault();
@@ -179,7 +161,7 @@ document.getElementById("appointment-form").addEventListener("submit", async fun
   };
 
   try {
-    const response = await fetch("http://localhost:5000/appointment", {
+    const res = await fetch("http://localhost:5000/appointments", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
@@ -187,15 +169,15 @@ document.getElementById("appointment-form").addEventListener("submit", async fun
       body: JSON.stringify(formData)
     });
 
-    const result = await response.json();
+    if (res.ok) {
+      document.getElementById("status").innerHTML =
+        "<span style='color:lightgreen;'>✅ Appointment saved!</span>";
+      this.reset();
+    } else {
+      throw new Error("Failed");
+    }
 
-    document.getElementById("status").innerHTML =
-      "<span style='color:lightgreen;'>✅ Appointment saved!</span>";
-
-    document.getElementById("appointment-form").reset();
-
-  } catch (error) {
-    console.error(error);
+  } catch (err) {
     document.getElementById("status").innerHTML =
       "<span style='color:red;'>❌ Failed to send</span>";
   }
