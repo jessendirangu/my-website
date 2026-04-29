@@ -3,68 +3,57 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Health Awareness</title>
+<title>Health Awareness | Jesse Ndirangu</title>
 
 <style>
 body {
   margin: 0;
-  font-family: Arial;
-  background: #f4f7fb;
-  color: #0f172a;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+  color: white;
 }
 
-/* NAV */
 nav {
-  display: flex;
-  justify-content: space-around;
-  background: #005eb8;
+  background: rgba(0,0,0,0.7);
   padding: 15px;
+  text-align: center;
 }
 
 nav a {
-  color: white;
+  margin: 0 15px;
+  color: #00ffcc;
   text-decoration: none;
   font-weight: bold;
 }
 
-/* HEADER */
-header {
-  text-align: center;
-  padding: 30px;
+.container {
+  padding: 40px 20px;
+  max-width: 900px;
+  margin: auto;
 }
 
-/* SECTIONS */
-section {
-  padding: 20px;
-}
-
-/* CARD */
 .card {
-  background: white;
-  padding: 20px;
-  margin: 15px auto;
+  background: rgba(255,255,255,0.1);
+  padding: 25px;
+  margin: 20px 0;
+  border-radius: 12px;
+}
+
+h1, h2 {
+  color: #00ffcc;
+}
+
+ul {
+  line-height: 1.6;
+}
+
+.highlight {
+  background: #00ffcc;
+  color: black;
+  padding: 15px;
   border-radius: 10px;
-  max-width: 700px;
-  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-}
-
-/* BUTTON */
-button {
-  padding: 10px 20px;
-  border: none;
-  background: #005eb8;
-  color: white;
-  border-radius: 8px;
-  cursor: pointer;
-}
-
-/* INPUT */
-input, textarea {
-  padding: 10px;
-  margin: 8px;
-  width: 90%;
-  border-radius: 8px;
-  border: 1px solid #ccc;
+  font-weight: bold;
+  margin-top: 20px;
 }
 </style>
 </head>
@@ -73,103 +62,126 @@ input, textarea {
 
 <nav>
   <a href="index.html">Home</a>
-  <a href="#tips">Tips</a>
-  <a href="#diseases">Diseases</a>
-  <a href="#bmi">BMI</a>
-  <a href="#appointment">Book</a>
+  <a href="health.html">Health</a>
+  <a href="index.html#contact">Contact</a>
 </nav>
 
-<header>
-  <h1>Health Awareness</h1>
-  <p>Promoting healthy living and disease prevention</p>
-</header>
+<div class="container">
 
-<!-- HEALTH TIPS -->
-<section id="tips">
+  <h1>Cancer Awareness</h1>
+
   <div class="card">
-    <h2>Healthy Living</h2>
-    <p>✔ Eat balanced meals</p>
-    <p>✔ Exercise regularly</p>
-    <p>✔ Stay hydrated</p>
-    <p>✔ Sleep 7–9 hours</p>
+    <h2>What is Cancer?</h2>
+    <p>
+      Cancer is a condition where abnormal cells grow uncontrollably and may spread to other parts of the body.
+    </p>
   </div>
 
   <div class="card">
-    <h2>Mental Health</h2>
-    <p>✔ Manage stress</p>
-    <p>✔ Talk to someone</p>
-    <p>✔ Take breaks</p>
-  </div>
-</section>
-
-<!-- DISEASES -->
-<section id="diseases">
-  <div class="card">
-    <h2>Hypertension</h2>
-    <p><b>Causes:</b> Stress, high salt diet</p>
-    <p><b>Symptoms:</b> Headaches, dizziness</p>
-    <p><b>Prevention:</b> Exercise, reduce salt</p>
+    <h2>Causes & Risk Factors</h2>
+    <ul>
+      <li>Smoking and tobacco use</li>
+      <li>Poor diet and obesity</li>
+      <li>Lack of exercise</li>
+      <li>Alcohol consumption</li>
+      <li>Genetic predisposition</li>
+      <li>Exposure to harmful chemicals</li>
+    </ul>
   </div>
 
   <div class="card">
-    <h2>Diabetes</h2>
-    <p><b>Causes:</b> High sugar intake</p>
-    <p><b>Symptoms:</b> Frequent urination, fatigue</p>
-    <p><b>Prevention:</b> Healthy diet, exercise</p>
+    <h2>Common Types of Cancer</h2>
+    <ul>
+      <li>Breast cancer</li>
+      <li>Lung cancer</li>
+      <li>Prostate cancer</li>
+      <li>Cervical cancer</li>
+      <li>Colorectal cancer</li>
+    </ul>
   </div>
 
   <div class="card">
-    <h2>Early Warning Signs</h2>
-    <p>• Persistent fatigue</p>
-    <p>• Sudden weight changes</p>
-    <p>• Shortness of breath</p>
+    <h2>Signs and Symptoms</h2>
+    <ul>
+      <li>Unexplained weight loss</li>
+      <li>Persistent fatigue</li>
+      <li>Lumps or swelling</li>
+      <li>Chronic pain</li>
+      <li>Unusual bleeding</li>
+    </ul>
   </div>
-</section>
 
-<!-- BMI -->
-<section id="bmi">
   <div class="card">
-    <h2>BMI Calculator</h2>
-    <input id="w" placeholder="Weight (kg)">
-    <input id="h" placeholder="Height (m)">
-    <br>
-    <button onclick="bmi()">Calculate</button>
-    <p id="result"></p>
+    <h2>Screening & Diagnosis</h2>
+    <ul>
+      <li>Blood tests</li>
+      <li>Biopsy</li>
+      <li>X-ray, CT scan, MRI</li>
+      <li>Pap smear and mammogram</li>
+    </ul>
   </div>
-</section>
 
-<!-- APPOINTMENT -->
-<section id="appointment">
   <div class="card">
-    <h2>Book Consultation</h2>
-    <input placeholder="Your Name">
-    <input placeholder="Your Email">
-    <textarea placeholder="Describe your concern"></textarea>
-    <button onclick="alert('Request submitted!')">Submit</button>
+    <h2>Prevention</h2>
+    <ul>
+      <li>Healthy balanced diet</li>
+      <li>Regular exercise</li>
+      <li>Avoid smoking</li>
+      <li>Limit alcohol intake</li>
+      <li>Regular medical checkups</li>
+    </ul>
   </div>
-</section>
 
-<!-- CONTACT -->
-<section>
   <div class="card">
-    <h2>Need Help?</h2>
-    <a href="tel:+447777386639"><button>Call</button></a>
-    <br><br>
-    <a href="https://wa.me/447777386639"><button>WhatsApp</button></a>
+    <h2>Treatment Options</h2>
+    <ul>
+      <li>Surgery</li>
+      <li>Chemotherapy</li>
+      <li>Radiotherapy</li>
+      <li>Immunotherapy</li>
+      <li>Targeted therapy</li>
+    </ul>
   </div>
-</section>
 
-<script>
-function bmi() {
-  let w = document.getElementById("w").value;
-  let h = document.getElementById("h").value;
+  <div class="card">
+    <h2>Side Effects of Treatment</h2>
+    <ul>
+      <li>Fatigue</li>
+      <li>Nausea and vomiting</li>
+      <li>Hair loss</li>
+      <li>Weak immune system</li>
+    </ul>
+  </div>
 
-  let b = w / (h*h);
+  <div class="card">
+    <h2>Patient Support & Care</h2>
+    <ul>
+      <li>Emotional support</li>
+      <li>Nutrition and hydration</li>
+      <li>Pain management</li>
+      <li>Family support</li>
+    </ul>
+  </div>
 
-  document.getElementById("result").innerHTML =
-    "Your BMI is " + b.toFixed(2);
-}
-</script>
+  <div class="card">
+    <h2>When to Seek Urgent Help</h2>
+    <ul>
+      <li>Severe persistent pain</li>
+      <li>Difficulty breathing</li>
+      <li>Uncontrolled bleeding</li>
+      <li>Rapid weight loss</li>
+    </ul>
+  </div>
+
+  <div class="highlight">
+    Early detection saves lives. Regular screening is essential.
+  </div>
+
+  <p style="margin-top:20px; font-size:14px; opacity:0.8;">
+    ⚠️ This information is for educational purposes only and does not replace professional medical advice.
+  </p>
+
+</div>
 
 </body>
 </html>
