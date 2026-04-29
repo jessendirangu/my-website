@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Jesse Ndirangu | Web Developer</title>
+<title>Jesse Ndirangu | Portfolio</title>
 
 <style>
 body {
@@ -29,40 +29,41 @@ nav a {
   font-weight: bold;
 }
 
-/* CONTAINER */
+/* LOGO */
+.logo {
+  width: 120px;
+  margin: 20px auto;
+  display: block;
+  animation: fadeIn 2s ease-in-out;
+}
+
+/* ANIMATION */
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.8); }
+  to { opacity: 1; transform: scale(1); }
+}
+
 .container {
   padding: 40px 20px;
 }
 
-/* PROFILE */
-.profile {
+img.profile {
   width: 150px;
   border-radius: 50%;
-  margin-bottom: 10px;
 }
 
-.logo {
-  width: 80px;
+h1 {
+  color: #00ffcc;
 }
 
 /* CARDS */
 .card {
   background: rgba(255,255,255,0.1);
-  padding: 20px;
+  padding: 25px;
   margin: 20px auto;
   border-radius: 12px;
   max-width: 700px;
-}
-
-/* GRID */
-.grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-.grid .card {
-  width: 260px;
+  animation: fadeIn 1.5s ease-in-out;
 }
 
 /* BUTTON */
@@ -73,13 +74,10 @@ button {
   border: none;
   border-radius: 8px;
   cursor: pointer;
+  font-weight: bold;
 }
 
-button:hover {
-  background: white;
-}
-
-/* INPUT */
+/* INPUTS */
 input, textarea {
   width: 90%;
   padding: 12px;
@@ -88,7 +86,6 @@ input, textarea {
   border: none;
 }
 
-/* STATUS */
 #status {
   margin-top: 15px;
   font-weight: bold;
@@ -100,71 +97,57 @@ input, textarea {
 
 <nav>
   <a href="#home">Home</a>
+  <a href="#projects">Projects</a>
   <a href="health.html">Health</a>
   <a href="#contact">Contact</a>
 </nav>
 
-<!-- HOME -->
 <div class="container" id="home">
 
+  <!-- LOGO -->
   <img src="logo.png" class="logo">
+
   <img src="me.jpg" class="profile">
-
   <h1>Jesse Kigo Ndirangu</h1>
-  <p><b>Web Developer | Nursing Student</b></p>
+  <p>Web Developer | Nursing Student</p>
 
+  <!-- ABOUT -->
   <div class="card">
     <h2>About Me</h2>
     <p>
-      Born on <b>26th May 2000</b> in <b>Kenya</b>, I am passionate about combining
-      healthcare and technology. I have a strong interest in 
-      <b>digitalised healthcare systems</b> and how technology can improve
-      patient outcomes globally.
+      Born on <b>26th May 2000</b> in <b>Kenya</b>, I am passionate about combining healthcare and technology.
+      I have a strong interest in <b>digitalised healthcare systems</b> and how innovation can improve patient outcomes globally.
     </p>
   </div>
 
-</div>
+  <!-- MISSION -->
+  <div class="card">
+    <h2>🎯 Mission</h2>
+    <p>To use technology and healthcare knowledge to improve patient care and accessibility.</p>
+  </div>
 
-<!-- MISSION VISION GOAL -->
-<div class="container">
+  <!-- VISION -->
+  <div class="card">
+    <h2>👁️ Vision</h2>
+    <p>To become a leader in digital healthcare innovation worldwide.</p>
+  </div>
 
-<div class="grid">
-
-<div class="card">
-  <h3>🎯 Mission</h3>
-  <p>To integrate healthcare and technology to improve patient care and efficiency.</p>
-</div>
-
-<div class="card">
-  <h3>👁️ Vision</h3>
-  <p>To become a leader in digital healthcare innovation worldwide.</p>
-</div>
-
-<div class="card">
-  <h3>🚀 Goal</h3>
-  <p>To develop smart healthcare systems that transform patient care globally.</p>
-</div>
-
-</div>
+  <!-- GOAL -->
+  <div class="card">
+    <h2>🚀 Goal</h2>
+    <p>To build smart healthcare systems that support early diagnosis, prevention, and treatment.</p>
+  </div>
 
 </div>
 
 <!-- PROJECTS -->
-<div class="container">
-  <h2>My Projects</h2>
+<div class="card" id="projects">
+  <h2>💻 Projects</h2>
 
-  <div class="grid">
+  <p><b>Healthcare Awareness Platform</b></p>
+  <p>A system focused on prevention, early detection, and cancer awareness.</p>
 
-    <div class="card">
-      <h3>🩺 Health Awareness Project</h3>
-      <p>
-        A healthcare awareness platform focusing on prevention, early detection,
-        and cancer education.
-      </p>
-      <a href="health.html" style="color:#00ffcc;">View Project →</a>
-    </div>
-
-  </div>
+  <a href="health.html" style="color:#00ffcc;">View Project →</a>
 </div>
 
 <!-- CONTACT -->
@@ -191,26 +174,21 @@ input, textarea {
 
 <script>
 (function(){
-  emailjs.init("RQ_H0XiPeuCO-tJsw");
+  emailjs.init("RQ_H0XiPeuCO-tJsw"); // your public key
 })();
 
 document.getElementById("appointment-form").addEventListener("submit", function(e) {
   e.preventDefault();
 
-  emailjs.sendForm(
-    "service_4vigyui",
-    "template_fs4bxon",
-    this,
-    "RQ_H0XiPeuCO-tJsw"
-  )
-  .then(function() {
-    document.getElementById("status").innerHTML =
-      "<span style='color:lightgreen;'>✅ Appointment sent successfully!</span>";
-  }, function(error) {
-    console.log(error);
-    document.getElementById("status").innerHTML =
-      "<span style='color:red;'>❌ Failed to send. Try again.</span>";
-  });
+  emailjs.sendForm("service_4vigyui", "template_fs4bxon", this)
+    .then(function() {
+      document.getElementById("status").innerHTML =
+        "<span style='color:lightgreen;'>✅ Appointment sent successfully!</span>";
+    }, function(error) {
+      console.log(error);
+      document.getElementById("status").innerHTML =
+        "<span style='color:red;'>❌ Failed to send. Try again.</span>";
+    });
 });
 </script>
 
