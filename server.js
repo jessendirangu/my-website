@@ -7,7 +7,12 @@ app.use(express.json());
 
 let appointments = []; // temporary storage
 
-// SAVE appointment
+// ✅ ROOT ROUTE (for testing backend)
+app.get("/", (req, res) => {
+  res.send("Backend is working 🚀");
+});
+
+// ✅ SAVE appointment
 app.post("/appointments", (req, res) => {
   const data = req.body;
   appointments.push(data);
@@ -15,11 +20,13 @@ app.post("/appointments", (req, res) => {
   res.json({ message: "Saved successfully" });
 });
 
-// GET all appointments (THIS WAS MISSING ❗)
+// ✅ GET all appointments
 app.get("/appointments", (req, res) => {
   res.json(appointments);
 });
 
-app.listen(5000, () => {
-  console.log("Server running on http://localhost:5000");
+// ✅ START SERVER (important for Render)
+const PORT = process.env.PORT || 5000;
+app.listen(PORT, () => {
+  console.log("Server running on port", PORT);
 });
