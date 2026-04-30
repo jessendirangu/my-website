@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin Dashboard</title>
+
+<style>
+body {
+  font-family: Arial;
+  background: #0f2027;
+  color: white;
+  text-align: center;
+}
+
+h1 {
+  color: #00ffcc;
+}
+
+table {
+  width: 95%;
+  margin: 20px auto;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 12px;
+  border: 1px solid #00ffcc;
+}
+
+th {
+  background: #00ffcc;
+  color: black;
+}
+
+tr:nth-child(even) {
+  background: rgba(255,255,255,0.1);
+}
+</style>
+</head>
+
+<body>
+
+<h1>📊 Admin Dashboard</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Phone</th>
+      <th>Service</th>
+      <th>Date</th>
+      <th>Time</th>
+      <th>Message</th>
+    </tr>
+  </thead>
+  <tbody id="data"></tbody>
+</table>
+
+<script>
+async function loadData() {
+  try {
+    const res = await fetch("https://my-website-xcgt.onrender.com/appointments");
+    const data = await res.json();
+
+    const table = document.getElementById("data");
+    table.innerHTML = "";
+
+    data.forEach(item => {
+      table.innerHTML += `
+        <tr>
+          <td>${item.name}</td>
+          <td>${item.email}</td>
+          <td>${item.phone}</td>
+          <td>${item.service}</td>
+          <td>${item.date}</td>
+          <td>${item.time}</td>
+          <td>${item.message}</td>
+        </tr>
+      `;
+    });
+
+  } catch (err) {
+    document.body.innerHTML += "<p style='color:red;'>Failed to load data</p>";
+  }
+}
+
+loadData();
+</script>
+
+</body>
+</html>
